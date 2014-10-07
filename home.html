@@ -22,6 +22,15 @@
 				background-color: rgba(23, 67, 122, 0.47);
 				background-image: url('img/nice-snow.png');
 			}
+			#contatos{
+				float:left;
+				line-height:60px;
+				margin-left:20px;
+				font-size:20px;
+			}
+			#logos{
+				float:right;
+			}
 			#logo{
 				background:url('img/fundo-header.jpg');
 				background-repeat:no-repeat;
@@ -29,8 +38,13 @@
 				background-position-x: 215px;
 			}
 			#logo img {
-			margin: 30px;
-			width: 270px;
+				margin: 26px;
+				width: 270px;
+				padding: 10px;
+				background: #ffffff;
+				border-radius: 30px;
+				border: #17437a solid 1px;
+				box-shadow: 1px 1px 10px 1px #615D5D;
 			}
 			.centro{
 				display:block;
@@ -68,7 +82,7 @@
 				
 			}
 			aside{
-				border-left:solid black 1px;
+				border-left: solid #7a202b 1px;
 			}
 			section{
 				clear:both;
@@ -84,14 +98,21 @@
 				margin:20px 5px;
 			}
 			.esquerda h2{
-				border-bottom:1px solid black;
+				border-bottom:1px solid #7a202b;
 			    margin: 0 200px 20px 0;
-			    color: #666;
-			    font-size: 52px;
-			    font-family: "trebuchet ms", sans-serif;    
+			    font-size: 40px;
+			
 			}
-			h2, h4,p{
+			.btn-primary {
+			color: #fff;
+			background-color: #17437a;
+			border-color: #17437a;
+			}
+			h2, h4{
 				text-indent:10px;
+				font-weight:200;
+				color:#17437a;
+				
 			}
 			.item{
 			    background: #d33b44;    
@@ -157,10 +178,13 @@
 				margin: 0 -18px;
 				padding: 16px;
 			}
-			footer{
+			footer.container{
 				padding:10px;
+				background:#17437a;
+				color:#ffffff;
 			}
-		</style>		
+		</style>	
+		<link href='http://fonts.googleapis.com/css?family=Rambla|Rajdhani|Titillium+Web|Pontano+Sans|Architects+Daughter' rel='stylesheet' type='text/css'>	
 	</head>
 	
 	<body>
@@ -301,6 +325,7 @@
 					<section id="agenda" class="modulo-sidebar">
 						<h2>Agenda</h2>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+						<img src="img/calendario.jpeg">
 					</section>
 
 					<section id="participe" class="modulo-sidebar">
@@ -326,7 +351,7 @@
 			
 		</div><!--container pagina-->
 		<footer class= "container">
-			<div id="contatos">email: email@email.com.br | Telefone: 11-11111111</div>
+			<div id="contatos">email@email.com.br | Telefone: 11-11111111</div>
 			<div id="logos"><img src="img/barra-footer.png"></div>
 			
 		</footer>
