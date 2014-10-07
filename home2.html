@@ -67,8 +67,8 @@
 			#myCarousel{
 				width:95%;
 			}
-			img{
-				margin-left:20px;
+			.carousel img{
+				margin-left: 75px;
 			}
 			.modulo-sidebar{
 				margin:20px 5px;
@@ -87,8 +87,25 @@
 			    background: #d33b44;    
 			    text-align: center;
 			    height: 275px !important;
-				padding: 40px 10px;
+/*				padding: 40px 10px;*/
 				
+			}
+			.item:nth-child(2n) .img-carousel{
+				height: 100%;
+				padding: 50px 20px 0 0;
+				background: #d33b44;
+			}
+			.item:nth-child(2n) .titulo-carousel{
+				background: #7a202b;
+			}
+			.item:nth-child(2n){
+				background: #17437a;
+			}
+			
+			.img-carousel{
+				height: 100%;
+				padding: 50px 20px 0 0;
+				background: #17437a;
 			}
 			.carousel{
 /*			    margin-top: 20px;*/
@@ -101,7 +118,15 @@
 				position:relative;
 			}
 			.carousel-caption{
-				left:10px;
+				left:0px;
+				margin:0px;
+				width:50%;
+				padding:0;
+				z-index:0;
+			}
+			.texto-carousel{
+				width:75%;
+				margin:10px 0 0 10px;
 			}
 			#item-bibli > *{
 				display:block;
@@ -112,6 +137,11 @@
 			a.carousel-control.right,a.carousel-control.left {
 				background:transparent;
 			}
+			.titulo-carousel{
+				background: #00aee5;
+				margin: 0 -18px;
+				padding: 16px;
+			}
 			footer{
 				padding:10px;
 			}
@@ -119,40 +149,7 @@
 	</head>
 	
 	<body>
-		<header class="container">
-			<div class="row" id="logo"><img class="centro" src="img/logo.png"></div>
-			<nav class="row">
-				<div class="collapse navbar-collapse" id="menu-principal">
-				      <ul class="nav navbar-nav centro col-md-8">
-				        <li class="active"><a href="#">Home</a></li>
-				        <li><a href="#">O que é o consórcio</a></li>
-				        <li class="dropdown">
-				          <a href="#0" class="dropdown-toggle" data-toggle="dropdown">Plano regional(PUI) <span class="caret"></span></a>
-				          <ul class="dropdown-menu" role="menu">
-				            <li><a href="#1">O que é</a></li>
-				            <li><a href="#">Histórico</a></li>
-				            <li><a href="#">Etapas</a></li>
-				            <li><a href="#">Biblioteca</a></li>
-				            <li><a href="#">Eventos</a></li>
-				            <li><a href="#">Participe</a></li>
-				          </ul>
-				        </li>
-						<li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planos diretores Itaparica e Vera Cruz (PDDU) <span class="caret"></span></a>
-				          <ul class="dropdown-menu" role="menu">
-				            <li><a href="#">O que é</a></li>
-				            <li><a href="#">Histórico</a></li>
-				            <li><a href="#">Etapas</a></li>
-				            <li><a href="#">Biblioteca</a></li>
-				            <li><a href="#">Eventos</a></li>
-				            <li><a href="#">Participe</a></li>
-				          </ul>
-				        </li>
-				      </ul>
-				    </div><!-- /.navbar-collapse -->				
-			</nav>
-			
-		</header>
+
 		<div class="container pagina"><!--container pagina-->
 			<div class="row principal"><!--row principal-->
 				<div class="col-md-8 esquerda"><!--esquerda-->
@@ -162,19 +159,65 @@
 						    <!-- Carousel indicators -->
 						    <ol class="carousel-indicators">
 						        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+						        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+						        <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
 						    </ol>   
 						    <!-- Carousel items -->
 						    <div class="carousel-inner">
 						        <div class="item active">
-						            <div id="img-carousel">
+						            <div class="img-carousel col-md-6">
 										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
 									</div>
-					            	<div class="carousel-caption">
-						              	<h3>Nome da imagem do primeiro</h3>
-						           		<p>Lorem ipsum dolor sit amet consectetur…</p>
-						            </div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do primeiro</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
 						        </div>
-						        
+								<div class="item ">
+						            <div class="img-carousel col-md-6">
+										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
+									</div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do Segundo</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
+						        </div>
+								<div class="item ">
+						            <div class="img-carousel col-md-6">
+										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
+									</div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do Terceiro</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
+						        </div>
+								<div class="item ">
+						            <div class="img-carousel col-md-6">
+										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
+									</div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do Quarto</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
+						        </div>
+						
 						    </div>
 						    <!-- Carousel nav -->
 						    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
