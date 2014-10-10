@@ -11,6 +11,12 @@
 			Planos Urbanos da Ilha de Itaparica
 		</title>	    
 		<style>
+			html .navbar-form .form-group {
+				margin-bottom:15px;
+			}
+			#calendario{
+				margin-top:20px;
+			}
 			.direita{
 				margin-top:35px;
 			}
@@ -52,6 +58,7 @@
 				float: none;
 				
 			}
+			
 			@media only screen and (min-width : 768px) {
 			    /* Make Navigation Toggle on Desktop Hover */
 			    .dropdown:hover .dropdown-menu {
@@ -195,7 +202,7 @@
 			<div class="row" id="logo"><img class="" src="img/logo.png"></div>
 			<nav class="row">
 				<div class="collapse navbar-collapse" id="menu-principal">
-				      <ul class="nav navbar-nav centro col-md-8">
+				      <ul class="nav navbar-nav centro col-md-12">
 				        <li class="active"><a href="#">Home</a></li>
 				        <li><a href="#">O que é o consórcio</a></li>
 				        <li class="dropdown">
@@ -220,6 +227,27 @@
 				            <li><a href="#">Participe</a></li>
 				          </ul>
 				        </li>
+				        <li><a href="#">Notícias</a></li>
+				        <li><a href="#">Agenda</a></li>
+						</a></li>
+						<li class="dropdown"><a href="#"><span class="glyphicon glyphicon-search"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+					        <li>
+								<form class=" navbar-form navbar-left" role="search">
+							  		<div class="form-group">
+							    		<input type="text" class="form-control" placeholder="">
+							  		</div>
+									<div class="clearfix"></div>
+							  		<button type="submit" class=" pull-right btn btn-primary">Buscar</span>
+									</button>
+								</form>
+							</li>
+				          </ul>
+				        </li>
+				
+						
+				
+				
 				      </ul>
 				    </div><!-- /.navbar-collapse -->				
 			</nav>
@@ -325,15 +353,11 @@
 					</section>
 				</div>
 				<aside class="col-md-4 sidebar direita">
-					<section id="agenda" class="modulo-sidebar">
-						<h2>Agenda</h2>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-						<img src="img/calendario.jpeg">
-					</section>
-
+					
 					<section id="participe" class="modulo-sidebar">
 						<h2>Participe</h2>
-						
+						<div id="contatos"><img src="img/face.png"><img src="img/email.png"><img src="img/skype.png"></div>
+						<div class="clearfix"></div>
 						<form>
 						    <div class="form-group">
 						        <label for="inputEmail">Email</label>
@@ -349,6 +373,23 @@
 						    <button type="submit" class="btn btn-primary">Enviar</button>
 						</form>
 					</section>
+					
+					<section id="agenda" class="modulo-sidebar">
+						<h2>Agenda</h2>
+						Aqui podemos 
+						Quando clicar em agenda abre uma página similar à página eventos do site http://litoralsustentavel.org.br/
+						<img id="calendario"src="img/calendario.png">
+					</section>
+					<section id="enderecos" class="modulo-sidebar">
+						<h2>Endereços</h2>
+						<p>Endereço 1:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 2:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 3:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 4:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						
+					</section>
+
+					
 				</aside>	
 			</div><!--row principal-->
 			
