@@ -11,6 +11,18 @@
 			Planos Urbanos da Ilha de Itaparica
 		</title>	    
 		<style>
+			a, p, li{
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight:400;
+				font-size:16px;
+			}
+			h1,h2,h3,h4{
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight:600;
+			}
+			a:hover, a{
+				text-decoration:none;
+			}
 			html .navbar-form .form-group {
 				margin-bottom:15px;
 			}
@@ -72,8 +84,24 @@
 			ul li a{
 				color:#ffffff;
 			}
-			ul li a:hover;{
-				color:#d33b44;
+			footer ul li a, #contatos p{
+				font-size:15px;
+				text-decoration:none;
+				
+			}
+			.mapa >li > a{
+				color:#F96770;
+			}
+			.mapa >li > a:hover{
+				color:#ffffff;
+				text-decoration:none;
+			}
+			.dropdown-menu {
+				right:1px;
+				left: initial;
+			}
+			footer ul li a:hover{
+				color:#F96770;
 			}
 			.nav-justified{
 				width:90%;
@@ -114,8 +142,8 @@
 			}
 			.esquerda h2{
 /*				border-bottom:1px solid #7a202b;*/
-			    margin: 30px 200px 30px 40px;
-			    font-size: 40px;
+			    margin: 20px 200px 20px 40px;
+			    font-size: 47px;
 			
 			}
 			.btn-primary {
@@ -125,7 +153,6 @@
 			}
 			h2, h4{
 				text-indent:10px;
-				font-weight:200;
 				color:#17437a;
 				
 			}
@@ -195,15 +222,19 @@
 			}
 			footer.container{
 				padding:10px;
-				background:#17437a;
+				background-color:#17437a;
+				background-image:url('img/nice-snow.png');
+				background-image:url('img/grunge-wall.png');
+				background-image:url('img/fresh-snow.png');
+				background-image:url('img/dust.png');
 				color:#ffffff;
 			}
 			#contatos img{
 				margin-left:30px;
 			}
 			.logos{
-				width:350px;
-				margin:0 20px 0 0;
+				width: 330px;
+				margin: 0px 20px 0 -70px;
 			}
 			.mapa > li{
 				display:inline-block;
@@ -213,12 +244,29 @@
 			}
 			.mapa li ul li{
 				display:block;
-				line-height:20px
+				line-height:20px;
 				margin:0px;
 				
 			}
+			html .carousel-indicators {
+			bottom: 10px;
+			}
+			
+			.navbar-nav.centro{
+			padding: 0;
+			width: 92%;
+			}
+			.busca{
+				
+			}
+			ul,ol{
+				padding: 0 0 0 10px;
+			}
+			#enderecos{
+				margin-bottom:20px;
+			}
 		</style>	
-		<link href='http://fonts.googleapis.com/css?family=Rambla|Rajdhani|Titillium+Web|Pontano+Sans|Architects+Daughter' rel='stylesheet' type='text/css'>	
+		<link href='http://fonts.googleapis.com/css?family=Convergence|Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>	
 	</head>
 	
 	<body>
@@ -226,7 +274,7 @@
 			<div class="row" id="logo"><img class="" src="img/logo.png"></div>
 			<nav class="row">
 				<div class="collapse navbar-collapse" id="menu-principal">
-				      <ul class="nav navbar-nav centro col-md-10">
+				      <ul class="nav navbar-nav centro col-md-12">
 				        <li class="active"><a href="#">Home</a></li>
 				        <li><a href="#">O que é o consórcio</a></li>
 				        <li class="dropdown">
@@ -253,8 +301,9 @@
 				        </li>
 				        <li><a href="#">Notícias</a></li>
 				        <li><a href="#">Agenda</a></li>
+				        <li><a href="#">Contato</a></li>
 						</a></li>
-						<li class="dropdown"><a href="#"><span class="glyphicon glyphicon-search"></span></a>
+						<li class="dropdown busca"><a href="#"><span class="glyphicon glyphicon-search"></span></a>
 				          <ul class="dropdown-menu" role="menu">
 					        <li>
 								<form class=" navbar-form navbar-left" role="search">
@@ -358,7 +407,7 @@
 					</section>
 					<section id="biblioteca" class="row">
 						<h2>Biblioteca</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href=#>Acesse aqui</a>
 						</p>
 						<!-- <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</h4>
 												<div id="item-bibli" class="col-md-4">
@@ -423,7 +472,7 @@
 		</div><!--container pagina-->
 		<footer class= "container">
 			<div class="row">
-				<div id="sitemap" class="col-md-8">
+				<div id="sitemap" class="col-md-9">
 					<ul class="mapa">
 				        <li class=""><a href="#">Home</a></li>
 				        <li><a href="#">O que é o consórcio</a></li>
@@ -454,12 +503,11 @@
 						</a></li>
 				      </ul>
 				</div>
-				<div id="logos" class="col-md-4"><img class="logos" src="img/logos1.png"><div class=clearfix></div><img class="logos"src="img/logos2.png">
+				<div id="logos" class="col-md-3"><img class="logos" src="img/logos1.png"><div class=clearfix></div><img class="logos"src="img/logos2.png">
 				</div>
-				<div id="contatos" class="col-md-12">
-					<div id="contatos"><img src="img/face.png"><img src="img/email.png"><img src="img/skype.png"></div>
+				<div id="contatos" class="col-md-6">
 					<div class="clearfix"></div>
-					<p>Endereço 1:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a> Telefone: 1111-1111</p>
+					<p> Outras informações de contato Telefone: 1111-1111</p>
 				</div>
 				
 			</div> <!--row-->
