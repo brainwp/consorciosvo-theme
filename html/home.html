@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<title>
+			Planos Urbanos da Ilha de Itaparica
+		</title>	    
+		<style>
+			a, p, li{
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight:400;
+				font-size:16px;
+			}
+			h1,h2,h3,h4{
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight:600;
+			}
+			a:hover, a{
+				text-decoration:none;
+			}
+			html .navbar-form .form-group {
+				margin-bottom:15px;
+			}
+			#calendario{
+				margin-top:20px;
+			}
+			.direita{
+				margin-top:35px;
+			}
+			.container{
+				background-color:#ffffff;
+				
+			}
+			body{
+				background-color: rgba(23, 67, 122, 0.47);
+				background-image: url('img/nice-snow.png');
+			}
+			#contatos{
+				float:left;
+				line-height:60px;
+				margin-left:20px;
+				font-size:20px;
+			}
+			#logos{
+				float:right;
+			}
+			#logo{
+				background:url('img/fundo-header.jpg');
+				background-repeat:no-repeat;
+				height: 200px;
+				background-position-x: 215px;
+			}
+			#logo img {
+				margin: 26px;
+				width: 270px;
+				padding: 10px;
+				background: #ffffff;
+				border-radius: 30px;
+				border: #17437a solid 1px;
+				box-shadow: 1px 1px 10px 1px #615D5D;
+			}
+			.centro{
+				display:block;
+				margin:0 auto;
+				float: none;
+				
+			}
+			
+			@media only screen and (min-width : 768px) {
+			    /* Make Navigation Toggle on Desktop Hover */
+			    .dropdown:hover .dropdown-menu {
+			    			    			        display: block;
+			    			    			    }
+			}
+			.container {
+			width: 1170px;
+			box-shadow: 0px 8px 21px #000000;
+			}
+			ul li a{
+				color:#ffffff;
+			}
+			footer ul li a, #contatos p{
+				font-size:14px;
+				text-decoration:none;
+				
+			}
+			.mapa >li > a{
+				color:#00aee5;
+				font-weight: bolder;
+				
+			}
+			.mapa >li > a:hover{
+				color:#ffffff;
+				text-decoration:none;
+			}
+			.dropdown-menu {
+				right:1px;
+				left: initial;
+			}
+			footer ul li a:hover{
+				color:#F96770;
+			}
+			.nav-justified{
+				width:90%;
+			}
+			#menu-principal{
+				background:#17437a;
+			}
+			#noticias > div, #biblioteca > div, footer > div{
+				display:inline-block;
+				float:left;
+			}
+			main{
+				
+			}
+			aside{
+				border-left: solid #7a202b 1px;
+			}
+			section{
+				clear:both;
+				margin:10px;
+			}
+			section p{
+				margin:0 40px 0 50px;
+			}
+			section .slide p{
+				margin:0;
+				
+			}
+		
+			#myCarousel{
+				width:95%;
+			}
+			.carousel img{
+				margin-left: 75px;
+			}
+			.modulo-sidebar{
+				margin:20px 5px;
+			}
+			.esquerda h2{
+/*				border-bottom:1px solid #7a202b;*/
+			    margin: 20px 200px 20px 50px;
+			    font-size: 47px;
+			
+			}
+			.btn-primary {
+			color: #fff;
+			background-color: #17437a;
+			border-color: #17437a;
+			}
+			h2, h4{
+				color:#17437a;
+				
+			}
+			.item{
+			    background: #d33b44;    
+			    text-align: center;
+			    height: 275px !important;
+/*				padding: 40px 10px;*/
+				
+			}
+			.item:nth-child(2n) .img-carousel{
+				height: 100%;
+				padding: 50px 20px 0 0;
+				background: #d33b44;
+			}
+			.item:nth-child(2n) .titulo-carousel{
+				background: #7a202b;
+			}
+			.item:nth-child(2n){
+				background: #17437a;
+			}
+			
+			.img-carousel{
+				height: 100%;
+				padding: 50px 20px 0 0;
+				background: #17437a;
+			}
+			.carousel{
+/*			    margin-top: 20px;*/
+			}
+			.bs-example{
+				margin: 20px;
+			}
+			.carousel-inner .item > div {
+				display:inline-block;
+				position:relative;
+			}
+			.carousel-caption{
+				left:0px;
+				margin:0px;
+				width:50%;
+				padding:0;
+				z-index:0;
+			}
+			.texto-carousel{
+				margin: -18px 0 0 0;
+				background: #d33b44;
+				padding: 23px 90px 0 10px;
+			}
+			.item:nth-child(2n) .texto-carousel{
+				background: #17437a;
+				
+			}
+			#item-bibli > *{
+				display:block;
+				margin:0 auto;
+				text-align:center;
+			}
+			
+			a.carousel-control.right,a.carousel-control.left {
+				background:transparent;
+			}
+			.titulo-carousel{
+				background: #00aee5;
+				margin: 0 -18px;
+				padding: 16px;
+			}
+			footer.container, html #DIV_5{
+				padding:10px;
+				background-color:#17437a;
+				background-image:url('img/nice-snow3.png');
+				color:#ffffff;
+			}
+			#contatos img{
+				margin-left:30px;
+			}
+			.logos{
+				width: 330px;
+				margin: 0px 20px 0 -70px;
+			}
+			.mapa > li{
+				display:inline-block;
+				vertical-align:top;
+				margin:10px;
+				
+			}
+			.mapa li ul li{
+				display:block;
+				line-height:20px;
+				margin:0px;
+				
+			}
+			html .carousel-indicators {
+			bottom: 10px;
+			}
+			
+			.navbar-nav.centro{
+			padding: 0;
+			width: 92%;
+			}
+			.busca{
+				
+			}
+			ul,ol{
+				padding: 0 0 0 10px;
+			}
+			#enderecos{
+				display:none;
+				margin-bottom:20px;
+			}
+			#DIV_1 {
+			    background-position: 0px 0px;
+				color: rgb(51, 51, 51);
+				float: left;
+				height: 120px;
+				/* min-height: 210px; */
+				/* opacity: 0.5; */
+				width: 298px;
+				z-index: 0;
+				background-image: url('img/nice-snow3.png');
+				
+				perspective-origin: 145px 115px;
+				transform-origin: 145px 115px;
+				background-color: rgba(143, 136, 137, 0.24);
+				border: 0px none rgb(51, 51, 51);
+				font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+				margin: 20px 20px 20px 0px;
+				outline: rgb(51, 51, 51) none 0px;
+				padding: 15px 15px 5px;
+			}/*#DIV_1*/
+
+			#DIV_2 {
+			    color: rgb(51, 51, 51);
+			    width: 260px;
+			    perspective-origin: 130px 0px;
+			    transform-origin: 130px 0px;
+			    border: 0px none rgb(51, 51, 51);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    margin: -10px 0px 0px;
+			    outline: rgb(51, 51, 51) none 0px;
+			}/*#DIV_2*/
+
+			#DIV_3 {
+			    color: rgb(51, 51, 51);
+			    width: 280px;
+			    perspective-origin: 140px 0px;
+			    transform-origin: 140px 0px;
+			    border: 0px none rgb(51, 51, 51);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    outline: rgb(51, 51, 51) none 0px;
+			}/*#DIV_3*/
+
+			#A_4 {
+			    color: rgb(16, 68, 147);
+			    text-decoration: none;
+			    border: 0px none rgb(16, 68, 147);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    list-style: none outside none;
+			    outline: rgb(16, 68, 147) none 0px;
+			}/*#A_4*/
+
+			#DIV_5 {
+				height: 64px;
+				width: 64px;
+			    background-position: 0px 0px;
+			    color: rgb(255, 255, 255);
+			    float: left;
+			    perspective-origin: 27.5px 27.5px;
+			    transform-origin: 27.5px 27.5px;
+			    background: rgb(0, 123, 91) none repeat scroll 0px 0px / auto padding-box border-box;
+			    border: 0px none rgb(255, 255, 255);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    list-style: none outside none;
+			    margin: 10px 0px 0px;
+			    outline: rgb(255, 255, 255) none 0px;
+			    padding: 5px;
+			}/*#DIV_5*/
+
+			#DIV_6 {
+				color: rgb(231, 87, 87);
+			    height: 21px;
+			    text-align: center;
+			    text-transform: uppercase;
+			    width: 45px;
+			    perspective-origin: 22.5px 10.5px;
+			    transform-origin: 22.5px 10.5px;
+			    border: 0px none rgb(179, 203, 67);
+			    font: normal normal bold normal 15px/21.1199989318848px 'Open Sans', sans-serif;
+			    list-style: none outside none;
+			    margin: -4px 0px 2px;
+			    outline: rgb(179, 203, 67) none 0px;
+			}/*#DIV_6*/
+
+			#DIV_7 {
+			    color: rgb(255, 255, 255);
+			    height: 21px;
+			    text-align: center;
+			    width: 45px;
+			    perspective-origin: 22.5px 10.5px;
+			    transform-origin: 22.5px 10.5px;
+			    border: 0px none rgb(255, 255, 255);
+			    font: normal normal normal normal 30px/21.1199989318848px 'Open Sans', sans-serif;
+			    list-style: none outside none;
+			    outline: rgb(255, 255, 255) none 0px;
+			}/*#DIV_7*/
+
+			#DIV_8 {
+				margin: 10px 0 0 10px; 
+				width: 160px;
+			    color: rgb(51, 51, 51);
+			    float: left;
+			    height: 80px;
+/*			    width: 190px;
+*/			    perspective-origin: 95px 40px;
+			    transform-origin: 95px 40px;
+			    border: 0px none rgb(51, 51, 51);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+/*			    margin: 2px 0px 0px 15px;
+*/			    outline: rgb(51, 51, 51) none 0px;
+			}/*#DIV_8*/
+
+			#H2_9 {
+			    clear: both;
+			    color: rgb(0, 68, 148);
+			    height: 80px;
+/*				width: 190px;*/
+			    perspective-origin: 95px 40px;
+			    transform-origin: 95px 40px;
+			    border: 0px none rgb(0, 68, 148);
+			    font: normal normal normal normal 16px/20.5920009613037px 'Source Sans Pro', sans-serif;
+			    margin: 0px;
+			    outline: rgb(0, 68, 148) none 0px;
+			}/*#H2_9*/
+
+			#A_10 {
+			    color: rgb(16, 68, 147);
+			    text-decoration: none;
+			    border: 0px none rgb(16, 68, 147);
+			    font: normal normal normal normal 16px/20.5920009613037px 'Source Sans Pro', sans-serif;
+			    list-style: none outside none;
+			    outline: rgb(16, 68, 147) none 0px;
+			}/*#A_10*/
+			#A_10:hover{
+				color:#00aee5;
+			}
+			#A_17:hover{
+				color: rgb(16, 68, 147);
+			    
+			}
+			#DIV_11 {
+				display:none;
+			    color: rgb(51, 51, 51);
+			    float: left;
+			    height: 103px;
+			    width: 265px;
+			    perspective-origin: 132.5px 51.5px;
+			    transform-origin: 132.5px 51.5px;
+			    border: 0px none rgb(51, 51, 51);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    margin: 10px 0px 0px;
+			    outline: rgb(51, 51, 51) none 0px;
+			}/*#DIV_11*/
+
+			#H1_12 {
+			    clear: both;
+			    color: rgb(0, 68, 148);
+			    float: left;
+			    height: 20px;
+			    text-transform: uppercase;
+			    width: 96px;
+			    perspective-origin: 48px 10px;
+			    transform-origin: 48px 10px;
+			    border: 0px none rgb(0, 68, 148);
+			    font: normal normal normal normal 16px/20.5920009613037px 'Source Sans Pro', sans-serif;
+			    margin: 0px 0px 20px;
+			    outline: rgb(0, 68, 148) none 0px;
+			}/*#H1_12*/
+
+			#P_13 {
+			    color: rgb(51, 51, 51);
+			    float: left;
+			    height: 63px;
+			    width: 155px;
+			    perspective-origin: 77.5px 31.5px;
+			    transform-origin: 77.5px 31.5px;
+			    border: 0px none rgb(51, 51, 51);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    margin: 0px 0px 0px 10px;
+			    outline: rgb(51, 51, 51) none 0px;
+			}/*#P_13*/
+
+			#H1_14 {
+			    clear: both;
+			    color: rgb(0, 68, 148);
+			    float: left;
+			    height: 20px;
+			    text-transform: uppercase;
+			    width: 83px;
+			    perspective-origin: 41.5px 10px;
+			    transform-origin: 41.5px 10px;
+			    border: 0px none rgb(0, 68, 148);
+			    font: normal normal normal normal 16px/20.5920009613037px 'Source Sans Pro', sans-serif;
+				;
+			    margin: 0px 0px 20px;
+			    outline: rgb(0, 68, 148) none 0px;
+			}/*#H1_14*/
+
+			#P_15 {
+			    color: rgb(51, 51, 51);
+			    float: left;
+			    height: 21px;
+			    width: 155px;
+			    perspective-origin: 77.5px 10.5px;
+			    transform-origin: 77.5px 10.5px;
+			    border: 0px none rgb(51, 51, 51);
+			    font: normal normal normal normal 13px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    margin: 0px 0px 0px 10px;
+			    outline: rgb(51, 51, 51) none 0px;
+			}/*#P_15*/
+			.data_mais{
+				display: inline-block;
+				width: 65px;
+				float: left;
+				
+			}
+			.data_mais div{
+				margin:0 auto;
+			}
+			#DIV_16 a{
+				margin: 0 auto;
+				width: 40px;
+				display: block;
+			}
+			#DIV_16 {
+				display: inline-block;
+				width: 64px;
+				background-color:#d33b44;
+							    /*background-position: 0px 0px;
+			    			    color: rgb(51, 51, 51);
+			    			    float: right;
+			    			    height: 21px;
+			    			    letter-spacing: 1px;
+			    			    text-transform: uppercase;
+			    			    width: 55px;
+			    			    perspective-origin: 33.5px 10.5px;
+			    			    transform-origin: 33.5px 10.5px;
+			    			    background: rgb(186, 186, 186) none repeat scroll 0px 0px / auto padding-box border-box;
+			    			    border: 0px none rgb(51, 51, 51);
+			    			    font: normal normal normal normal 11px/21.1199989318848px 'Source Sans Pro', sans-serif;
+			    			    margin: -15px -2px 2px 0px;
+			    			    outline: rgb(51, 51, 51) none 0px;
+			    			    padding: 0px 6px;*/
+			}/*#DIV_16*/
+
+			#A_17 {
+			    color: rgb(255, 255, 255);
+			    letter-spacing: 1px;
+			    text-decoration: none;
+			    text-transform: uppercase;
+			    border: 0px none rgb(255, 255, 255);
+			    font: normal normal normal normal 11px/21.'Source Sans Pro', sans-serif;
+			    list-style: none outside none;
+			    outline: rgb(255, 255, 255) none 0px;
+			}/*#A_17*/
+
+			
+		</style>	
+		<link href='http://fonts.googleapis.com/css?family=Convergence|Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>	
+	</head>
+	
+	<body>
+		<header class="container">
+			<div class="row" id="logo"><img class="" src="img/logo.png"></div>
+			<nav class="row">
+				<div class="collapse navbar-collapse" id="menu-principal">
+				      <ul class="nav navbar-nav centro col-md-12">
+				        <li class="active"><a href="#">Home</a></li>
+				        <li><a href="#">O que é o consórcio</a></li>
+				        <li class="dropdown">
+				          <a href="#0" class="dropdown-toggle" data-toggle="dropdown">Plano regional(PUI) <span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="#1">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planos diretores Itaparica e Vera Cruz (PDDU) <span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="#">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+				        <li><a href="#">Notícias</a></li>
+				        <li><a href="#">Agenda</a></li>
+				        <li><a href="#">Contato</a></li>
+						</a></li>
+						<li class="dropdown busca"><a href="#"><span class="glyphicon glyphicon-search"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+					        <li>
+								<form class=" navbar-form navbar-left" role="search">
+							  		<div class="form-group">
+							    		<input type="text" class="form-control" placeholder="">
+							  		</div>
+									<div class="clearfix"></div>
+							  		<button type="submit" class=" pull-right btn btn-primary">Buscar</span>
+									</button>
+								</form>
+							</li>
+				          </ul>
+				        </li>
+				
+						
+				
+				
+				      </ul>
+				    </div><!-- /.navbar-collapse -->				
+			</nav>
+			
+		</header>
+		<div class="container pagina"><!--container pagina-->
+			<div class="row principal"><!--row principal-->
+				<!--header-->
+				
+				
+				
+				<div class="col-md-8 esquerda"><!--esquerda-->
+					<section id="noticias" class="row">
+						<h2>Notícias</h2>
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						    <!-- Carousel indicators -->
+						    <ol class="carousel-indicators">
+						        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+						        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+						        <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
+						    </ol>   
+						    <!-- Carousel items -->
+						    <div class="carousel-inner">
+						        <div class="item active">
+						            <div class="img-carousel col-md-6">
+										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
+									</div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do primeiro</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
+						        </div>
+								<div class="item ">
+						            <div class="img-carousel col-md-6">
+										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
+									</div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do Segundo</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
+						        </div>
+								<div class="item ">
+						            <div class="img-carousel col-md-6">
+										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
+									</div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do Terceiro</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
+						        </div>
+								<div class="item ">
+						            <div class="img-carousel col-md-6">
+										<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
+									</div>
+					            	<div class="carousel-caption col-md-6">
+						              	<div class="titulo-carousel">
+											<h3>titulo da noticia do Quarto</h3>
+										</div>
+										<div class="texto-carousel">
+						           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
+						            	</div>
+									</div>
+						        </div>
+						
+						    </div>
+						    <!-- Carousel nav -->
+						    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+						        <span class="glyphicon glyphicon-chevron-left"></span>
+						    </a>
+						    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+						        <span class="glyphicon glyphicon-chevron-right"></span>
+						    </a>
+						</div>
+						
+					</section>
+					<section id="biblioteca" class="row">
+						<h2>Biblioteca</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href=#>Acesse aqui</a>
+						</p>
+						<!-- <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</h4>
+												<div id="item-bibli" class="col-md-4">
+													<img src="img/pdf.png">
+													<h4>Nome da Mídia</h4>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+												</div>
+												<div id="item-bibli" class="col-md-4">
+													<img src="img/jpg.png">
+													<h4>Nome da Mídia</h4>
+													<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+												</div>
+												<div id="item-bibli" class="col-md-4">
+													<img src="img/doc.png">
+													<h4>Nome da Mídia</h4>
+													<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+												</div>	 -->			
+					</section>
+					<section id="enderecos" class="row">
+						<h2>Endereços</h2>
+						<p>Endereço 1:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 2:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 3:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 4:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						
+					</section>
+					
+				</div>
+				<aside class="col-md-4 sidebar direita">
+					
+					<section id="participe" class="modulo-sidebar">
+						<h2>Participe</h2>
+						<div id="contatos"><img src="img/face.png"><img src="img/email.png"><img src="img/skype.png"></div>
+						<div class="clearfix"></div>
+						<form>
+						    <div class="form-group">
+						        <label for="inputEmail">Email</label>
+						        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+						    </div>
+						    <div class="form-group">
+						        <label for="inputText">Mensagem</label>
+						        <textarea type="text" class="form-control" id="inputText" placeholder="Mensagem"></textarea>
+						    </div>
+						    <div class="checkbox">
+						        <label><input type="checkbox"> Desejo receber atualizações</label>
+						    </div>
+						    <button type="submit" class="btn btn-primary">Enviar</button>
+						</form>
+					</section>
+					
+					<section id="agenda" class="modulo-sidebar">
+						<h2>Agenda</h2>
+						Aqui podemos 
+						Quando clicar em agenda abre uma página similar à página eventos do site http://litoralsustentavel.org.br/
+						<div id="DIV_1">
+							<div id="DIV_2">
+								<div id="DIV_3">
+									<a href="http://litoralsustentavel.org.br/eventos/encontro-regional-do-projeto-litoral-sustentavel-baixada-santista/" id="A_4"></a>
+									<div class='data_mais'>
+										<div id="DIV_5">
+										<div id="DIV_6">
+											Dez
+										</div>
+										<div id="DIV_7">
+											12
+										</div>
+									</div>
+									<!-- .data-evento-agenda -->
+										<div id="DIV_16">
+										 <a href="http://litoralsustentavel.org.br/eventos/encontro-regional-do-projeto-litoral-sustentavel-baixada-santista/" id="A_17">Mais</a>
+									</div>
+									</div>´<!--data mais-->
+									<div id="DIV_8">
+										<h2 id="H2_9">
+											<a href="http://litoralsustentavel.org.br/eventos/encontro-regional-do-projeto-litoral-sustentavel-baixada-santista/" id="A_10">Evento relacionado à construção da ponte salvador-itaparica.</a>
+										</h2>
+									</div>
+								</div>
+								
+								<!-- #evento-agenda -->
+
+							</div>
+							<!-- #agenda-geral -->
+
+							
+						</div>
+					</section>
+					
+					
+				</aside>	
+			</div><!--row principal-->
+			
+		</div><!--container pagina-->
+		<footer class= "container">
+			<div class="row">
+				<div id="sitemap" class="col-md-9">
+					<ul class="mapa">
+				        <li><a href="#">O que é o consórcio</a></li>
+				        <li class="">
+				          <a href="#" class="">Plano regional(PUI) </a>
+				          <ul class="" >
+				            <li><a href="#1">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+						<li class="">
+				          <a href="#" class="">Planos diretores Itaparica e Vera Cruz (PDDU) </a>
+				          <ul class="" >
+				            <li><a href="#">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+				        <li><a href="#">Notícias</a></li>
+				        <li><a href="#">Agenda</a></li>
+						</a></li>
+				      </ul>
+				</div>
+				<div id="logos" class="col-md-3"><img class="logos" src="img/logos1.png"><div class=clearfix></div><img class="logos"src="img/logos2.png">
+				</div>
+				<div id="contatos" class="col-md-6">
+					<div class="clearfix"></div>
+					<p> Outras informações de contato Telefone: 1111-1111</p>
+				</div>
+				
+			</div> <!--row-->
+			
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
