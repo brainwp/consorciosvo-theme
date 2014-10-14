@@ -11,6 +11,27 @@
 			Planos Urbanos da Ilha de Itaparica
 		</title>	    
 		<style>
+		#agenda{
+			display:none;
+		}
+			a, p, li{
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight:400;
+				font-size:16px;
+			}
+			h1,h2,h3,h4{
+				font-family: 'Source Sans Pro', sans-serif;
+				font-weight:600;
+			}
+			a:hover, a{
+				text-decoration:none;
+			}
+			html .navbar-form .form-group {
+				margin-bottom:15px;
+			}
+			#calendario{
+				margin-top:20px;
+			}
 			.direita{
 				margin-top:35px;
 			}
@@ -22,12 +43,37 @@
 				background-color: rgba(23, 67, 122, 0.47);
 				background-image: url('img/nice-snow.png');
 			}
+			#contatos{
+				float:left;
+				line-height:60px;
+				margin-left:20px;
+				font-size:20px;
+			}
+			#logos{
+				float:right;
+			}
+			#logo{
+				background:url('img/fundo-header.jpg');
+				background-repeat:no-repeat;
+				height: 200px;
+				background-position-x: 215px;
+			}
+			#logo img {
+				margin: 26px;
+				width: 270px;
+				padding: 10px;
+				background: #ffffff;
+				border-radius: 30px;
+				border: #17437a solid 1px;
+				box-shadow: 1px 1px 10px 1px #615D5D;
+			}
 			.centro{
 				display:block;
 				margin:0 auto;
 				float: none;
 				
 			}
+			
 			@media only screen and (min-width : 768px) {
 			    /* Make Navigation Toggle on Desktop Hover */
 			    .dropdown:hover .dropdown-menu {
@@ -41,8 +87,24 @@
 			ul li a{
 				color:#ffffff;
 			}
-			ul li a:hover;{
-				color:#d33b44;
+			footer ul li a, #contatos p{
+				font-size:15px;
+				text-decoration:none;
+				
+			}
+			.mapa >li > a{
+				color:#00aee5;
+			}
+			.mapa >li > a:hover{
+				color:#ffffff;
+				text-decoration:none;
+			}
+			.dropdown-menu {
+				right:1px;
+				left: initial;
+			}
+			footer ul li a:hover{
+				color:#F96770;
 			}
 			.nav-justified{
 				width:90%;
@@ -58,12 +120,20 @@
 				
 			}
 			aside{
-				border-left:solid black 1px;
+				border-left: solid #7a202b 1px;
 			}
 			section{
 				clear:both;
 				margin:10px;
 			}
+			section p{
+				margin:0 40px 0 30px;
+			}
+			section .slide p{
+				margin:0;
+				
+			}
+		
 			#myCarousel{
 				width:95%;
 			}
@@ -74,14 +144,20 @@
 				margin:20px 5px;
 			}
 			.esquerda h2{
-				border-bottom:1px solid black;
-			    margin: 0 200px 20px 0;
-			    color: #666;
-			    font-size: 52px;
-			    font-family: "trebuchet ms", sans-serif;    
+/*				border-bottom:1px solid #7a202b;*/
+			    margin: 20px 200px 20px 40px;
+			    font-size: 47px;
+			
 			}
-			h2, h4,p{
+			.btn-primary {
+			color: #fff;
+			background-color: #17437a;
+			border-color: #17437a;
+			}
+			h2, h4{
 				text-indent:10px;
+				color:#17437a;
+				
 			}
 			.item{
 			    background: #d33b44;    
@@ -125,8 +201,13 @@
 				z-index:0;
 			}
 			.texto-carousel{
-				width:75%;
-				margin:10px 0 0 10px;
+				margin: -18px 0 0 0;
+				background: #d33b44;
+				padding: 23px 90px 0 10px;
+			}
+			.item:nth-child(2n) .texto-carousel{
+				background: #17437a;
+				
 			}
 			#item-bibli > *{
 				display:block;
@@ -142,14 +223,110 @@
 				margin: 0 -18px;
 				padding: 16px;
 			}
-			footer{
+			footer.container{
 				padding:10px;
+				background-color:#17437a;
+				background-image:url('img/nice-snow3.png');
+				color:#ffffff;
 			}
-		</style>		
+			#contatos img{
+				margin-left:30px;
+			}
+			.logos{
+				width: 330px;
+				margin: 0px 20px 0 -70px;
+			}
+			.mapa > li{
+				display:inline-block;
+				vertical-align:top;
+				margin:10px;
+				
+			}
+			.mapa li ul li{
+				display:block;
+				line-height:20px;
+				margin:0px;
+				
+			}
+			html .carousel-indicators {
+			bottom: 10px;
+			}
+			
+			.navbar-nav.centro{
+			padding: 0;
+			width: 92%;
+			}
+			.busca{
+				
+			}
+			ul,ol{
+				padding: 0 0 0 10px;
+			}
+			#enderecos{
+				display:none;
+				margin-bottom:20px;
+			}
+		</style>	
+		<link href='http://fonts.googleapis.com/css?family=Convergence|Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>	
 	</head>
 	
 	<body>
-
+		<header class="container">
+			<div class="row" id="logo"><img class="" src="img/logo.png"></div>
+			<nav class="row">
+				<div class="collapse navbar-collapse" id="menu-principal">
+				      <ul class="nav navbar-nav centro col-md-12">
+				        <li class="active"><a href="#">Home</a></li>
+				        <li><a href="#">O que é o consórcio</a></li>
+				        <li class="dropdown">
+				          <a href="#0" class="dropdown-toggle" data-toggle="dropdown">Plano regional(PUI) <span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="#1">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planos diretores Itaparica e Vera Cruz (PDDU) <span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="#">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+				        <li><a href="#">Notícias</a></li>
+				        <li><a href="#">Agenda</a></li>
+				        <li><a href="#">Contato</a></li>
+						</a></li>
+						<li class="dropdown busca"><a href="#"><span class="glyphicon glyphicon-search"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+					        <li>
+								<form class=" navbar-form navbar-left" role="search">
+							  		<div class="form-group">
+							    		<input type="text" class="form-control" placeholder="">
+							  		</div>
+									<div class="clearfix"></div>
+							  		<button type="submit" class=" pull-right btn btn-primary">Buscar</span>
+									</button>
+								</form>
+							</li>
+				          </ul>
+				        </li>
+				
+						
+				
+				
+				      </ul>
+				    </div><!-- /.navbar-collapse -->				
+			</nav>
+			
+		</header>
 		<div class="container pagina"><!--container pagina-->
 			<div class="row principal"><!--row principal-->
 				<div class="col-md-8 esquerda"><!--esquerda-->
@@ -231,33 +408,41 @@
 					</section>
 					<section id="biblioteca" class="row">
 						<h2>Biblioteca</h2>
-						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</h4>
-						<div id="item-bibli" class="col-md-4">
-							<img src="img/pdf.png">
-							<h4>Nome da Mídia</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-						</div>
-						<div id="item-bibli" class="col-md-4">
-							<img src="img/jpg.png">
-							<h4>Nome da Mídia</h4>
-							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-						</div>
-						<div id="item-bibli" class="col-md-4">
-							<img src="img/doc.png">
-							<h4>Nome da Mídia</h4>
-							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>				
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href=#>Acesse aqui</a>
+						</p>
+						<!-- <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</h4>
+												<div id="item-bibli" class="col-md-4">
+													<img src="img/pdf.png">
+													<h4>Nome da Mídia</h4>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+												</div>
+												<div id="item-bibli" class="col-md-4">
+													<img src="img/jpg.png">
+													<h4>Nome da Mídia</h4>
+													<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+												</div>
+												<div id="item-bibli" class="col-md-4">
+													<img src="img/doc.png">
+													<h4>Nome da Mídia</h4>
+													<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+												</div>	 -->			
 					</section>
+					<section id="enderecos" class="row">
+						<h2>Endereços</h2>
+						<p>Endereço 1:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 2:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 3:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						<p>Endereço 4:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
+						
+					</section>
+					
 				</div>
 				<aside class="col-md-4 sidebar direita">
-					<section id="agenda" class="modulo-sidebar">
-						<h2>Agenda</h2>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-					</section>
-
+					
 					<section id="participe" class="modulo-sidebar">
 						<h2>Participe</h2>
-						
+						<div id="contatos"><img src="img/face.png"><img src="img/email.png"><img src="img/skype.png"></div>
+						<div class="clearfix"></div>
 						<form>
 						    <div class="form-group">
 						        <label for="inputEmail">Email</label>
@@ -273,13 +458,59 @@
 						    <button type="submit" class="btn btn-primary">Enviar</button>
 						</form>
 					</section>
+					
+					<section id="agenda" class="modulo-sidebar" >
+						<h2>Agenda</h2>
+						Aqui podemos 
+						Quando clicar em agenda abre uma página similar à página eventos do site http://litoralsustentavel.org.br/
+						<img id="calendario"src="img/calendario.png">
+					</section>
+					
+					
 				</aside>	
 			</div><!--row principal-->
 			
 		</div><!--container pagina-->
 		<footer class= "container">
-			<div id="contatos">email: email@email.com.br | Telefone: 11-11111111</div>
-			<div id="logos"><img src="img/barra-footer.png"></div>
+			<div class="row">
+				<div id="sitemap" class="col-md-9">
+					<ul class="mapa">
+				        <li><a href="#">O que é o consórcio</a></li>
+				        <li class="">
+				          <a href="#" class="">Plano regional(PUI) </a>
+				          <ul class="" >
+				            <li><a href="#1">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+						<li class="">
+				          <a href="#" class="">Planos diretores Itaparica e Vera Cruz (PDDU) </a>
+				          <ul class="" >
+				            <li><a href="#">O que é</a></li>
+				            <li><a href="#">Histórico</a></li>
+				            <li><a href="#">Etapas</a></li>
+				            <li><a href="#">Biblioteca</a></li>
+				            <li><a href="#">Eventos</a></li>
+				            <li><a href="#">Participe</a></li>
+				          </ul>
+				        </li>
+				        <li><a href="#">Notícias</a></li>
+				        <li><a href="#">Agenda</a></li>
+						</a></li>
+				      </ul>
+				</div>
+				<div id="logos" class="col-md-3"><img class="logos" src="img/logos1.png"><div class=clearfix></div><img class="logos"src="img/logos2.png">
+				</div>
+				<div id="contatos" class="col-md-6">
+					<div class="clearfix"></div>
+					<p> Outras informações de contato Telefone: 1111-1111</p>
+				</div>
+				
+			</div> <!--row-->
 			
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
