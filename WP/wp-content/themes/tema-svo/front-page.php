@@ -46,7 +46,9 @@ get_header(); ?>
 				 	    </div>
 				    
 						
-					<?php $count++;endwhile;?>
+					<?php $count++;endwhile;
+					wp_reset_postdata();
+					?>
 				</div>
 			    <!-- Carousel items -->
 			
@@ -63,8 +65,16 @@ get_header(); ?>
 		</section>
 		<section id="biblioteca" class="row">
 			<h2>Biblioteca</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href=#>Acesse aqui</a>
-			</p>
+		 
+			<?php
+			
+			$args = array( 'post_type' => 'page', 'meta_key' =>'_wp_page_template', 'meta_value'=> 'page-biblioteca.php', 'posts_per_page' => 4 );
+			$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post();
+					echo '<p>'.get_field('texto_da_home').'</p>';
+				endwhile;
+			?>
+		
 			<!-- <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</h4>
 									<div id="item-bibli" class="col-md-4">
 										<img src="img/pdf.png">
