@@ -184,6 +184,9 @@ h2, h4{
 	padding: 50px 20px 0 0;
 	background: #17437a;
 }
+.img-carousel img{
+	width:255px;
+}
 .carousel{
 /*			    margin-top: 20px;*/
 }

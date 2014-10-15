@@ -15,6 +15,7 @@ get_header(); ?>
 	<div class="col-md-8 esquerda"><!--esquerda-->
 		<section id="noticias" class="row">
 			<h2>Notícias</h2>
+			
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			    <!-- Carousel indicators -->
 			    <ol class="carousel-indicators">
@@ -23,62 +24,33 @@ get_header(); ?>
 			        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
 			        <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
 			    </ol>   
-			    <!-- Carousel items -->
-			    <div class="carousel-inner">
-			        <div class="item active">
-			            <div class="img-carousel col-md-6">
-							<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
-						</div>
-		            	<div class="carousel-caption col-md-6">
-			              	<div class="titulo-carousel">
-								<h3>titulo da noticia do primeiro</h3>
-							</div>
-							<div class="texto-carousel">
-			           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
-			            	</div>
-						</div>
-			        </div>
-					<div class="item ">
-			            <div class="img-carousel col-md-6">
-							<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
-						</div>
-		            	<div class="carousel-caption col-md-6">
-			              	<div class="titulo-carousel">
-								<h3>titulo da noticia do Segundo</h3>
-							</div>
-							<div class="texto-carousel">
-			           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
-			            	</div>
-						</div>
-			        </div>
-					<div class="item ">
-			            <div class="img-carousel col-md-6">
-							<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
-						</div>
-		            	<div class="carousel-caption col-md-6">
-			              	<div class="titulo-carousel">
-								<h3>titulo da noticia do Terceiro</h3>
-							</div>
-							<div class="texto-carousel">
-			           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
-			            	</div>
-						</div>
-			        </div>
-					<div class="item ">
-			            <div class="img-carousel col-md-6">
-							<img src="http://www.pontesalvadorilhadeitaparica.ba.gov.br/wp-content/uploads/2014/09/IMG_0075.jpg">
-						</div>
-		            	<div class="carousel-caption col-md-6">
-			              	<div class="titulo-carousel">
-								<h3>titulo da noticia do Quarto</h3>
-							</div>
-							<div class="texto-carousel">
-			           			<p>Lorem ipsum dolor sit amet consectetur Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia </p>
-			            	</div>
-						</div>
-			        </div>
 			
-			    </div>
+				<div class="carousel-inner">
+				<?php
+				$args = array( 'post_type' => 'noticia', 'meta_key' =>'destacar', 'meta_value'=> TRUE, 'posts_per_page' => 4 );
+				$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post();
+						?>
+						<div class="item <?php if ($count == 0){echo 'active';}?>">
+							<div class="img-carousel col-md-6">
+				             	<?php the_post_thumbnail(); ?> 
+							</div>
+							<div class="carousel-caption col-md-6">
+			            	  	<div class="titulo-carousel">
+				            		<h3><?php the_title();?></h3>
+								</div>
+								<div class="texto-carousel">
+									<p> <?php the_excerpt();?></p>
+				            	</div>
+				 			</div>
+				 	    </div>
+				    
+						
+					<?php $count++;endwhile;?>
+				</div>
+			    <!-- Carousel items -->
+			
+			
 			    <!-- Carousel nav -->
 			    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
 			        <span class="glyphicon glyphicon-chevron-left"></span>
@@ -86,7 +58,7 @@ get_header(); ?>
 			    <a class="carousel-control right" href="#myCarousel" data-slide="next">
 			        <span class="glyphicon glyphicon-chevron-right"></span>
 			    </a>
-			</div>
+			</div><!--carousel-inner-->
 			
 		</section>
 		<section id="biblioteca" class="row">

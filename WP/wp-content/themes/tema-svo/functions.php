@@ -282,3 +282,14 @@ add_action( 'wp_enqueue_scripts', 'svo_scripts' );
 /////////////////////////////////////////////////////////////////////////////////	
 	//requerindo os custom posts
 require_once get_template_directory() . '/assets/php/custom-posts.php';
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////	
+
+function custom_excerpt_length($length) {
+    global $post;
+    if ($post->post_type == 'noticia')
+    return 40;
+    else
+    return 80;
+    }
+add_filter('excerpt_length', 'custom_excerpt_length');
