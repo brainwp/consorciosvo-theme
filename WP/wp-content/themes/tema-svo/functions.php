@@ -28,8 +28,8 @@ require_once get_template_directory() . '/core/classes/class-shortcodes.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
 // require_once get_template_directory() . '/core/classes/class-theme-options.php';
 // require_once get_template_directory() . '/core/classes/class-options-helper.php';
-// require_once get_template_directory() . '/core/classes/class-post-type.php';
-// require_once get_template_directory() . '/core/classes/class-taxonomy.php';
+require_once get_template_directory() . '/core/classes/class-post-type.php';
+require_once get_template_directory() . '/core/classes/class-taxonomy.php';
 // require_once get_template_directory() . '/core/classes/class-metabox.php';
 // require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
 // require_once get_template_directory() . '/core/classes/class-contact-form.php';
@@ -264,16 +264,21 @@ require_once get_template_directory() . '/inc/plugins-support.php';
  */
 require_once get_template_directory() . '/inc/template-tags.php';
 //load fonts
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 function load_fonts() {
             wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Convergence|Source+Sans+Pro:400,600');
             wp_enqueue_style( 'googleFonts');
         }
-    
     add_action('wp_print_styles', 'load_fonts');
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 function svo_scripts() {
 	wp_register_style('estilo', get_stylesheet_directory_uri() . '/assets/css/estilo.css');
     wp_enqueue_style( 'estilo');
-
 }	
-
-	add_action( 'wp_enqueue_scripts', 'svo_scripts' );
+add_action( 'wp_enqueue_scripts', 'svo_scripts' );
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////	
+	//requerindo os custom posts
+require_once get_template_directory() . '/assets/php/custom-posts.php';

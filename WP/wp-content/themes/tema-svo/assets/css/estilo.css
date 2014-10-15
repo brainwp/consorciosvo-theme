@@ -60,6 +60,9 @@ body{
 	float: none;
 	
 }
+header.container{
+	box-shadow:none;
+}
 .row{
 
 	 margin-left: 0; 
@@ -106,6 +109,9 @@ footer ul li a:hover{
 #menu-principal{
 	background:#17437a;
 }
+.row.principal{
+	margin-bottom:35px;
+}
 #noticias > div, #biblioteca > div, footer > div{
 	display:inline-block;
 	float:left;
@@ -125,11 +131,13 @@ section p{
 }
 section .slide p{
 	margin:0;
-	
+	width: 274px;
 }
 
 #myCarousel{
-	width:95%;
+	width:100%;
+	margin-left: -15px;
+	
 }
 .carousel img{
 	margin-left: 75px;
@@ -155,7 +163,7 @@ h2, h4{
 .item{
     background: #d33b44;    
     text-align: center;
-    height: 275px !important;
+	height: 279px !important;
 /*				padding: 40px 10px;*/
 	
 }
