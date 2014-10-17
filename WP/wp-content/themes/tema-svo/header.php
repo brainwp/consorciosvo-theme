@@ -40,7 +40,24 @@
 			?>
 				<div class="row" id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="" /></a></div>
 			<?php endif; ?>
-			
+
+			<nav class="row">
+				<?php
+				wp_nav_menu(
+											array(
+												'theme_location' => 'main-menu',
+												'depth'          => 2,
+												'container'      => 'div',
+												'container_class' => 'collapse navbar-collapse',
+												'container_id'    => 'menu-principal',
+												'menu_class'     => 'nav navbar-nav centro col-md-12',
+												'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+												'walker'         => new Odin_Bootstrap_Nav_Walker()
+											)
+										);
+			    ?>
+			</nav>
+
 			<nav class="row">
 				<div class="collapse navbar-collapse" id="menu-principal">
 				      <ul class="nav navbar-nav centro col-md-12">
