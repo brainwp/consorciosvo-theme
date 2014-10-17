@@ -152,21 +152,21 @@ add_action( 'after_setup_theme', 'odin_setup_features' );
  *
  * @return void
  */
-function odin_widgets_init() {
-	register_sidebar(
-		array(
-			'name' => __( 'Main Sidebar', 'odin' ),
-			'id' => 'main-sidebar',
-			'description' => __( 'Site Main Sidebar', 'odin' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widgettitle widget-title">',
-			'after_title' => '</h3>',
-		)
-	);
-}
-
-add_action( 'widgets_init', 'odin_widgets_init' );
+// function odin_widgets_init() {
+// 	register_sidebar(
+// 		array(
+// 			'name' => __( 'Main Sidebar', 'odin' ),
+// 			'id' => 'main-sidebar',
+// 			'description' => __( 'Site Main Sidebar', 'odin' ),
+// 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+// 			'after_widget' => '</aside>',
+// 			'before_title' => '<h3 class="widgettitle widget-title">',
+// 			'after_title' => '</h3>',
+// 		)
+// 	);
+// }
+// 
+// add_action( 'widgets_init', 'odin_widgets_init' );
 
 /**
  * Flush Rewrite Rules for new CPTs and Taxonomies.
@@ -278,6 +278,22 @@ function svo_scripts() {
     wp_enqueue_style( 'estilo');
 }	
 add_action( 'wp_enqueue_scripts', 'svo_scripts' );
+
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+function inicia_barra_lateral() {
+
+	register_sidebar( array(
+		'name' => 'Barra lateral principal',
+		'id' => 'barra-principal',
+		'before_widget' => '<section id="%1$s" class="modulo-sidebar">',
+		'after_widget' => '</section>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'inicia_barra_lateral' );
+
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////	
 	//requerindo os custom posts
@@ -294,3 +310,6 @@ function custom_excerpt_length($length) {
     }
 add_filter('excerpt_length', 'custom_excerpt_length');
 
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+require_once (get_stylesheet_directory() . '/requires-agenda.php');
