@@ -119,7 +119,7 @@ footer ul li a:hover{
 main{
 	
 }
-aside{
+.aside{
 	border-left: solid #7a202b 1px;
 }
 section{
@@ -269,4 +269,23 @@ ul,ol{
 #enderecos{
 	display:none;
 	margin-bottom:20px;
+}
+#breadcrumbs{
+    list-style:none;
+    margin:10px 0;
+    overflow:hidden;
+}
+ 
+#breadcrumbs li{
+    float:left;
+    margin-right:15px;
+}
+#breadcrumbs li a{
+	color:#428bca;
+}
+ 
+#breadcrumbs .separator{
+    font-weight:700;
+    font-size:20px;
+    color:#999;
 }

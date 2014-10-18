@@ -58,58 +58,58 @@
 			    ?>
 			</nav>
 
-			<nav class="row">
-				<div class="collapse navbar-collapse" id="menu-principal">
-				      <ul class="nav navbar-nav centro col-md-12">
-				        <li class="active"><a href="#">Home</a></li>
-				        <li><a href="#">O que é o consórcio</a></li>
-				        <li class="dropdown">
-				          <a href="#0" class="dropdown-toggle" data-toggle="dropdown">Plano regional(PUI) <span class="caret"></span></a>
-				          <ul class="dropdown-menu" role="menu">
-				            <li><a href="#1">O que é</a></li>
-				            <li><a href="#">Histórico</a></li>
-				            <li><a href="#">Etapas</a></li>
-				            <li><a href="#">Biblioteca</a></li>
-				            <li><a href="#">Eventos</a></li>
-				            <li><a href="#">Participe</a></li>
-				          </ul>
-				        </li>
-						<li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planos diretores Itaparica e Vera Cruz (PDDU) <span class="caret"></span></a>
-				          <ul class="dropdown-menu" role="menu">
-				            <li><a href="#">O que é</a></li>
-				            <li><a href="#">Histórico</a></li>
-				            <li><a href="#">Etapas</a></li>
-				            <li><a href="#">Biblioteca</a></li>
-				            <li><a href="#">Eventos</a></li>
-				            <li><a href="#">Participe</a></li>
-				          </ul>
-				        </li>
-				        <li><a href="#">Notícias</a></li>
-				        <li><a href="#">Agenda</a></li>
-				        <li><a href="#">Contato</a></li>
-						</a></li>
-						<li class="dropdown busca"><a href="#"><span class="glyphicon glyphicon-search"></span></a>
-				          <ul class="dropdown-menu" role="menu">
-					        <li>
-								<form class=" navbar-form navbar-left" role="search">
-							  		<div class="form-group">
-							    		<input type="text" class="form-control" placeholder="">
-							  		</div>
-									<div class="clearfix"></div>
-							  		<button type="submit" class=" pull-right btn btn-primary">Buscar</span>
-									</button>
-								</form>
-							</li>
-				          </ul>
-				        </li>
-				
-						
-				
-				
-				      </ul>
-				    </div><!-- /.navbar-collapse -->				
-			</nav>
+			<!-- <nav class="row">
+							<div class="collapse navbar-collapse" id="menu-principal">
+							      <ul class="nav navbar-nav centro col-md-12">
+							        <li class="active"><a href="#">Home</a></li>
+							        <li><a href="#">O que é o consórcio</a></li>
+							        <li class="dropdown">
+							          <a href="#0" class="dropdown-toggle" data-toggle="dropdown">Plano regional(PUI) <span class="caret"></span></a>
+							          <ul class="dropdown-menu" role="menu">
+							            <li><a href="#1">O que é</a></li>
+							            <li><a href="#">Histórico</a></li>
+							            <li><a href="#">Etapas</a></li>
+							            <li><a href="#">Biblioteca</a></li>
+							            <li><a href="#">Eventos</a></li>
+							            <li><a href="#">Participe</a></li>
+							          </ul>
+							        </li>
+									<li class="dropdown">
+							          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planos diretores Itaparica e Vera Cruz (PDDU) <span class="caret"></span></a>
+							          <ul class="dropdown-menu" role="menu">
+							            <li><a href="#">O que é</a></li>
+							            <li><a href="#">Histórico</a></li>
+							            <li><a href="#">Etapas</a></li>
+							            <li><a href="#">Biblioteca</a></li>
+							            <li><a href="#">Eventos</a></li>
+							            <li><a href="#">Participe</a></li>
+							          </ul>
+							        </li>
+							        <li><a href="#">Notícias</a></li>
+							        <li><a href="#">Agenda</a></li>
+							        <li><a href="#">Contato</a></li>
+									</a></li>
+									<li class="dropdown busca"><a href="#"><span class="glyphicon glyphicon-search"></span></a>
+							          <ul class="dropdown-menu" role="menu">
+								        <li>
+											<form class=" navbar-form navbar-left" role="search">
+										  		<div class="form-group">
+										    		<input type="text" class="form-control" placeholder="">
+										  		</div>
+												<div class="clearfix"></div>
+										  		<button type="submit" class=" pull-right btn btn-primary">Buscar</span>
+												</button>
+											</form>
+										</li>
+							          </ul>
+							        </li>
+							
+									
+							
+							
+							      </ul>
+							    </div>				
+						</nav> -->
 		</header><!-- #header -->
 
 		<div id="main" class="site-main">

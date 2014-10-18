@@ -92,44 +92,11 @@ get_header(); ?>
 										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 									</div>	 -->			
 		</section>
-		<section id="enderecos" class="row">
-			<h2>Endereços</h2>
-			<p>Endereço 1:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
-			<p>Endereço 2:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
-			<p>Endereço 3:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
-			<p>Endereço 4:<a href="#"> rua do endereço1, 1111, CEP 00000-000</a></p>
-			
-		</section>
 		
 	</div>
-	<aside class="col-md-4 sidebar direita">
-		
-		<section id="participe" class="modulo-sidebar">
-			<h2>Participe</h2>
-			<div id="contatos"><img src="<?php echo get_stylesheet_directory_uri().'/assets/images/face.png'?>"><img src="<?php echo get_stylesheet_directory_uri().'/assets/images/email.png'?>"><img src="<?php echo get_stylesheet_directory_uri().'/assets/images/skype.png'?>"></div>
-			<div class="clearfix"></div>
-			<form>
-			    <div class="form-group">
-			        <label for="inputEmail">Email</label>
-			        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-			    </div>
-			    <div class="form-group">
-			        <label for="inputText">Mensagem</label>
-			        <textarea type="text" class="form-control" id="inputText" placeholder="Mensagem"></textarea>
-			    </div>
-			    <div class="checkbox">
-			        <label><input type="checkbox"> Desejo receber atualizações</label>
-			    </div>
-			    <button type="submit" class="btn btn-primary">Enviar</button>
-			</form>
-		</section>
-		
-		<section id="agenda" class="modulo-sidebar">
-			<h2>Agenda</h2>
-		</section>
-		
-		
-	</aside>	
+	<?php get_sidebar( 'home' ); ?>
+	
+
 </div><!--row principal-->
 </div><!--container pagina-->
 
