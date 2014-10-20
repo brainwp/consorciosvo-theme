@@ -196,9 +196,6 @@ else {
 					} 
 					?>
 					</div><!--row principal-->
-					
-	<?php get_sidebar( 'biblioteca' ); ?>
-
 
 </div><!--container pagina-->
 

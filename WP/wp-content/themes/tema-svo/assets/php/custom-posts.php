@@ -1,4 +1,5 @@
-<?php function noticias_cpt() {
+<?php 
+function noticias_cpt() {
     $noticia = new Odin_Post_Type(
         'Notícia', // Nome (Singular) do Post Type.
         'noticia' // Slug do Post Type.
@@ -17,7 +18,30 @@
     );
 }
 
-add_action( 'init', 'noticias_cpt', 1 );
+
+///////////////////////////////////////////////////////////
+function biblioteca_cpt() {
+    $biblioteca = new Odin_Post_Type(
+        'Item de biblioteca', // Nome (Singular) do Post Type.
+        'biblioteca' // Slug do Post Type.
+    );
+
+    $biblioteca->set_labels(
+        array(
+            'menu_name' => __( 'Item de biblioteca', 'odin' )
+        )
+    );
+
+    $biblioteca->set_arguments(
+        array(
+            'supports' => array( 'title', 'editor', 'thumbnail', 'post-formats' )
+        )
+    );
+}
+
+add_action( 'init', 'biblioteca_cpt', 1 );
+///////////////////////////////////////////////////////////
+
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
