@@ -11,12 +11,18 @@
 get_header(); ?>
 <?php the_breadcrumb(); ?>
 
-		<div class="col-md-8 esquerda"><!--esquerda-->
+		<div class="col-md-12 esquerda"><!--esquerda-->
+			<?php
+							// Start the Loop.
+							while ( have_posts() ) : the_post();
 
-		</div>
-		<aside class="col-md-4 sidebar direita">
+								// Include the page content template.
+								get_template_part( 'content', 'contato' );
 
-		</aside>	
+								
+							endwhile;
+						?>
+		</div>	
 	</div><!--row principal-->
 	</div><!--container pagina-->
 
