@@ -27,13 +27,16 @@ if (isset($_GET["local"])){
 }
 else {
 	$cat="";
+	$counter=1;
 }
 
-?>	<div class="col-md-8 esquerda"><!--esquerda-->
+?>	<div class="col-md-11 esquerda"><!--esquerda-->
 		<div id="resumo">	
 			<h1 class="category-agenda">EVENTOS</h1>
 		</div><!-- #resumo -->
-					<?php echo "$cat";?>
+					<?php 
+					$counter=1;
+					echo "$cat";?>
 			        <div id="primeira-linha">
 				
 			            <!-- Inicio Loop Agenda --> 
@@ -45,6 +48,7 @@ else {
 			                            "meta_key" => "agenda-event-date", // Campo da Data do Evento
 			                            "orderby" => "meta_value", // This stays as 'meta_value' or 'meta_value_num' (str sorting or numeric sorting)
 			                            "order" => "DESC",
+										'posts_per_page'=>'9',
 			                            'paged' => $paged,
 			                            );
 
@@ -73,8 +77,8 @@ else {
 			                    // Condição: Se a data do evento for maior ou igual que a data de expiração, exibe normalmente!
 			                    if ( $ag_data_time >= $dataexpira ) { ?>
 
-			                                    <div id="cada-dia">
-			                                    <div id="agenda-geral">	
+			                                    <div class="cada-dia inline-block">
+			                                    <div class="inline-block agenda-geral">	
 			                                        <div class="evento-agenda">
 			                                                <a href="<?php the_permalink() ?>">
 			                                                <div class="data-evento-agenda">
@@ -101,32 +105,29 @@ else {
 			                                                        }
 
 			                                                    ?>
-			                                                    <div id="mes-agenda"><?php echo $mes; ?></div>
-			                                                    <div id="dia-agenda"><?php echo $data_explode[2]; ?></div>
-
+			                                                    <div class="mes-agenda"><?php echo $mes; ?></div>
+			                                                    <div class="dia-agenda"><?php echo $data_explode[2]; ?></div>
 			                                                </div><!-- .data-evento-agenda -->
-			                                                </a>
+															<div class="hora-evento"><?php echo $ag_inicio; ?></div>
 			                                        </div><!-- #evento-agenda -->
 			                                    </div><!-- #agenda-geral -->
-			                                    <div id="agenda-archive-titulo"> <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
-			                                        <div id="info-evento" class="archive">
-			                                        <h1 class="negrito">Endere&ccedil;o:</h1>
-			                                        <p class="archive"><?php echo $ag_endereco; ?>
-			                                        <h1 class="negrito">Hor&aacute;rio:</h1>
-			                                        <p class="archive"><?php echo $ag_inicio; ?></p>
+			                                    <div class="agenda-archive-titulo inline-block" > <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
+														<div class="clearfix"></div>
+			                                        	<div class="info-evento" class="archive">
+			                                        	<h3 class="negrito">Endere&ccedil;o:</h3>
+			                                        	<p class="archive"><?php echo $ag_endereco; ?></p>
+			                                        	
 			                                        </div>
-
-			                                        <div id="leia-mais-agenda" class="archive">
-			                                        <a href="<?php the_permalink() ?>">Leia mais</a>
+													<div class="leia-mais-agenda" class="archive">
+			                                        	<a href="<?php the_permalink() ?>">Leia Mais</a>
 			                                        </div>
+													<div class="clearfix"></div>
 			                                    </div><!-- #cada-dia -->  
-
-
 			                    <?php } 
 			                     // Condição: Se a data do evento for menor que a data de expiração, exibe! Evento Passado
 			                    if ( $ag_data_time < $dataexpira ) { ?>
-			                                    <div id="cada-dia" class="passado">
-			                                    <div id="agenda-geral">	
+			                                    <div class="cada-dia inline-block passado">
+			                                    <div class="agenda-geral inline-block">	
 			                                        <div class="evento-agenda">
 			                                                <a href="<?php the_permalink() ?>">
 			                                                <div class="data-evento-agenda">
@@ -153,29 +154,35 @@ else {
 			                                                        }
 
 			                                                    ?>
-			                                                    <div id="mes-agenda"><?php echo $mes; ?></div>
-			                                                    <div id="dia-agenda"><?php echo $data_explode[2]; ?></div>
-
+			                                                    <div class="mes-agenda"><?php echo $mes; ?></div>
+			                                                    <div class="dia-agenda"><?php echo $data_explode[2]; ?></div>
 			                                                </div><!-- .data-evento-agenda -->
-			                                                </a>
+															<div class="hora-evento"><?php echo $ag_inicio; ?></div>
 			                                        </div><!-- #evento-agenda -->
 			                                    </div><!-- #agenda-geral -->
-			                                    <div id="agenda-archive-titulo"> <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
-			                                        <div id="info-evento" class="archive">
-			                                        <h1 class="negrito">Endere&ccedil;o:</h1>
-			                                        <p class="archive"><?php echo $ag_endereco; ?>
-			                                        <h1 class="negrito">Hor&aacute;rio:</h1>
-			                                        <p class="archive"><?php echo $ag_inicio; ?></p>
+			                                    <div class="agenda-archive-titulo inline-block" > <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
+														<div class="clearfix"></div>
+			                                        	<div class="info-evento" class="archive">
+			                                        	<h3 class="negrito">Endere&ccedil;o:</h3>
+			                                        	<p class="archive"><?php echo $ag_endereco; ?></p>
+			                                        	
 			                                        </div>
-
-			                                        <div id="leia-mais-agenda" class="archive">
-			                                        <a href="<?php the_permalink() ?>">Leia mais</a>
+													<div class="leia-mais-agenda" class="archive">
+			                                        	<a href="<?php the_permalink() ?>">Leia Mais</a>
 			                                        </div>
+													<div class="clearfix"></div>
 			                                    </div><!-- #cada-dia -->  
 			                    <?php } ?>
-			            <?php endwhile; ?>
+			            <?php		$mod=$counter % 3;
+									if ($mod==0) {
+								echo "<div class='clearfix'></div>";
+								}
+								$counter++;
+								
+						endwhile; ?>
 			            <!-- Fim Loop -->
-
+						<div class="clearfix"></div>
+						
 			        </div><!-- #primeira-linha -->
 					<?php /* Display navigation to next/previous pages when applicable */ ?>
 						<?php 

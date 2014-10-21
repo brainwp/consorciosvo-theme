@@ -126,17 +126,15 @@ section{
 	clear:both;
 	margin:10px;
 }
-section p{
-	margin:0 40px 0 50px;
-}
+
 section .slide p{
 	margin:0;
 	width: 274px;
 }
 
 #myCarousel{
-	width:100%;
-	margin-left: -15px;
+	width: 105%;
+	margin-left: -65px;
 	
 }
 .carousel img{
@@ -145,18 +143,89 @@ section .slide p{
 .modulo-sidebar{
 	margin:20px 5px;
 }
-.esquerda h2{
+ .esquerda h1{
 /*				border-bottom:1px solid #7a202b;*/
-    margin: 20px 200px 20px 50px;
     font-size: 47px;
 
+}
+.inline-block{
+	display:inline-block;
+	float:left;
+}
+.agenda-geral{
+	width:30%
+}
+.info-evento{
+	clear:both;
+}
+.agenda-archive-titulo{
+	width:65%;
+	
+}
+.agenda-archive-titulo h2{
+	margin:0px 0 0 10px;
+	line-height:20px;
+}
+.info-evento h3{
+	margin-top:10px;
+}
+.info-evento p{
+	margin-bottom:5px;
+}
+.cada-dia{
+	background-color: rgba(143, 136, 137, 0.24);
+	padding:20px;
+	margin:10px;
+	width:300px;
+}
+.data-evento-agenda{
+	width: 70px;
+	padding: 10px 10px 12px;
+	background-color: #17437a;
+	color: #ffffff;
+	text-align: center;
+	line-height: 23px;
+	height: 70px;
+	
+}
+.evento-agenda a{
+	color:#ffffff;
+	
+}
+.leia-mais-agenda{
+	float:right;
+}
+.hora-evento{
+	width: 70px;
+	background: #d33b44;
+	text-align: center;
+	height: 29px;
+	line-height: 29px;
+}
+.mes-agenda{
+	font-size:1.5em;
+	color: rgb(231, 87, 87);
+}
+.dia-agenda{
+	font-size:1.9em;
+}
+.esquerda h2{
+	font-size: 39px;
+    
+}
+.esquerda {
+	margin: 20px 0 20px 50px;
+	
+}
+.home .esquerda {
+	width: 62%;
 }
 .btn-primary {
 color: #fff;
 background-color: #17437a;
 border-color: #17437a;
 }
-h2, h4{
+h1, h2, h4{
 	color:#17437a;
 	
 }

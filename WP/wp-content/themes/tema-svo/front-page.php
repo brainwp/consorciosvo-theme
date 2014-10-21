@@ -14,7 +14,7 @@ get_header(); ?>
 
 	<div class="col-md-8 esquerda"><!--esquerda-->
 		<section id="noticias" class="row">
-			<h2>Notícias</h2>
+			<h1>Notícias</h1>
 			
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			    <!-- Carousel indicators -->
@@ -65,14 +65,14 @@ get_header(); ?>
 			
 		</section>
 		<section id="biblioteca" class="row">
-			<h2>Biblioteca</h2>
-		 
+			<h1>Biblioteca</h1>
+		 	<p>teste</p>
 			<?php
 			
 			$args = array( 'post_type' => 'page', 'meta_key' =>'_wp_page_template', 'meta_value'=> 'page-biblioteca.php', 'posts_per_page' => 4 );
 			$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();
-					echo '<p>'.get_field('texto_da_home').'</p>';
+					echo '<p>teste'.get_field('texto_da_home').'</p>';
 				endwhile;
 			?>
 		

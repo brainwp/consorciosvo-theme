@@ -16,7 +16,7 @@
 get_header(); ?>
 <?php the_breadcrumb(); ?>
 
-	<div class="col-md-8 esquerda">
+	<div class="col-md-11 esquerda">
 			<?php
 				if ( have_posts() ) :
 					// Start the Loop.
@@ -32,7 +32,6 @@ get_header(); ?>
 					endwhile;
 
 					// Post navigation.
-					odin_paging_nav();
 
 				else :
 					// If no content, include the "No posts found" template.
@@ -42,7 +41,6 @@ get_header(); ?>
 			?>
 
 		</div>
-		<?php get_sidebar( 'biblioteca' ); ?>
 
 
 	</div><!--row principal-->

@@ -1,7 +1,7 @@
 <?php 
 
 $custom_query_args = array( 'post_type' => 'post',
-  'posts_per_page'=>'10');
+  'posts_per_page'=>'9');
 
 // Get current page and append to custom query parameters array
 $custom_query_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
@@ -29,7 +29,6 @@ $wp_query   = $custom_query;?>
 		</div>
 		<div class="resumo">
 		 <?php the_excerpt(); ?> 
-
 		</div><!--resumo-->
 	</div> <!-- noticias-->
 	
@@ -40,11 +39,23 @@ $wp_query   = $custom_query;?>
 
 
 <?php // Reset postdata
+$total_pages = $custom_query->max_num_pages;  
+if ($total_pages > 1){  
+$current_page = max(1, get_query_var('paged'));  
+echo '<div class="page_nav">';  
+echo paginate_links(array(  
+  'base' => get_pagenum_link(1) . '%_%',  
+  'format' => '/page/%#%',  
+  'current' => $current_page,  
+  'total' => $total_pages,  
+  'prev_text' => '<< Anteriores',  
+  'next_text' => 'Pr&oacute;ximos >>'  
+));  
+echo '</div>';  
+}
 wp_reset_postdata();
 
 // Custom query loop pagination
-previous_posts_link( 'Notícias mais recentes' );
-next_posts_link( 'Notícias mais Antigas', $custom_query->max_num_pages );
 
 // Reset main query object
 $wp_query = NULL;
