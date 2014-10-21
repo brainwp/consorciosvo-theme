@@ -221,7 +221,7 @@ section .slide p{
 	margin: 20px 0 20px 50px;
 	
 }
-.home .esquerda {
+.col-md-8.esquerda {
 	width: 62%;
 }
 .btn-primary {
