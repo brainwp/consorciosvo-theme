@@ -17,7 +17,10 @@ get_header(); ?>
 <?php the_breadcrumb(); ?>
 
 	<div class="col-md-11 esquerda">
+			<?php the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' ); ?>
+			
 			<?php
+			
 				if ( have_posts() ) :
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
