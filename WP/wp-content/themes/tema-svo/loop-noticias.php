@@ -12,26 +12,32 @@ $custom_query = new WP_Query( $custom_query_args );
 // Pagination fix
 $temp_query = $wp_query;
 $wp_query   = NULL;
-$wp_query   = $custom_query;?>
-
+$wp_query   = $custom_query;
+$counter=1;
+?>
 <?php if ( $custom_query->have_posts() ) : ?>
 
   <!-- pagination here -->
 
   <!-- the loop -->
   <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
-    <div class="noticias">
+    <div class="noticia inline-block col-md-4">
 		<a class="titulo" href="<?php echo post_permalink($post->ID); ?>"><h2><?php the_title(); ?></h2></a>
 		<div class="post-thumbnail"><?php if ( has_post_thumbnail() ) {the_post_thumbnail();}?>
+			<div class="data">
+				<?php echo get_the_date()?>
+			</div>
 		</div><!--post-thumbnail-->
-		<div class="data">
-			<?php echo get_the_date()?>
-		</div>
-		<div class="resumo">
+		
+		<div class="resumo ">
 		 <?php the_excerpt(); ?> 
 		</div><!--resumo-->
-	</div> <!-- noticias-->
-	
+	</div> <!-- noticia-->
+	<?php $mod=$counter % 3;
+				if ($mod==0) {
+			echo "<div class='clearfix'></div>";
+			}
+			$counter++;?>
 
 
 
