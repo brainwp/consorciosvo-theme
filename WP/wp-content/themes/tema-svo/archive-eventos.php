@@ -35,8 +35,7 @@ else {
 			<h1 class="category-agenda">EVENTOS</h1>
 		</div><!-- #resumo -->
 					<?php 
-					$counter=1;
-					echo "$cat";?>
+					$counter=1;?>
 			        <div id="primeira-linha">
 				
 			            <!-- Inicio Loop Agenda --> 
