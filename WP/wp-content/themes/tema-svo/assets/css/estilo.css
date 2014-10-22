@@ -367,7 +367,9 @@ ul,ol{
 #pagination, #pagination2{
 text-align:center;}
 #noticias .row.principal{
-	min-height:700px;
-	
+	min-height:900px;
+}
+.bloco-destaque{
+	min-height:500px;
 }
 

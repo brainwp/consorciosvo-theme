@@ -28,10 +28,11 @@ get_header(); ?>
 						 * use this in a child theme, then include a file called called content-___.php
 						 * (where ___ is the post format) and that will be used instead.
 						 */
-						get_template_part( 'loop', 'destaques');
-						get_template_part( 'loop', 'noticia');
+						?>
+						<div class="bloco-destaque"><?php get_template_part( 'loop', 'destaques');?></div>
+						<div class="bloco-noticia "><?php get_template_part( 'loop', 'noticia');?></div>
 
-					endwhile;
+					<?php endwhile;
 
 					// Post navigation.
 
