@@ -60,9 +60,12 @@
 	    $('#destaques-noticias').on('click', '#pagination a', function(e){
 	        e.preventDefault();
 	        var link = $(this).attr('href');
+			$('.nav-baixo').fadeOut(500);
 	        $('#destaques-noticias').fadeOut(500, function(){
+				$('.nav-baixo').fadeOut(500);
 	            $(this).load(link + ' #destaques-noticias', function() {
 	                $(this).fadeIn(500);
+					$('.nav-baixo').fadeIn(500);
 	            });
 	        });
 	    });
@@ -71,12 +74,28 @@
 	    $('#noticias-ajax').on('click', '#pagination2 a', function(e){
 	        e.preventDefault();
 	        var link = $(this).attr('href');
+			$('.nav-cima').fadeOut(500);
 	        $('#noticias-ajax').fadeOut(500, function(){
 	            $(this).load(link + ' #noticias-ajax', function() {
 	                $(this).fadeIn(500);
+					$('.nav-cima').fadeIn(500);
 	            });
 	        });
 	    });
+	});
+	jQuery(function() {
+	  jQuery('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = jQuery(this.hash);
+	      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        jQuery('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
 	});
 	</script>
 </body>

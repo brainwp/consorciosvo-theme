@@ -29,9 +29,16 @@ get_header(); ?>
 						 * (where ___ is the post format) and that will be used instead.
 						 */
 						?>
-						<div class="bloco-destaque"><?php get_template_part( 'loop', 'destaques');?></div>
+						<div class="bloco-destaque">
+							<?php get_template_part( 'loop', 'destaques');?>
+							<a class="nav-baixo" href="#noticia-1"></a>
+						</div>
 						<hr>
-						<div class="bloco-noticia "><?php get_template_part( 'loop', 'noticia');?></div>
+						<div class="bloco-noticia ">
+							<?php get_template_part( 'loop', 'noticia');?>
+							<a class="nav-cima" href="#destaques-noticias"></a>
+							
+						</div>
 
 					<?php endwhile;
 

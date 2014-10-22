@@ -9,7 +9,6 @@ $destaques_query->query($destaques_query_args);
 
 <?php while ( $destaques_query->have_posts() ) : $destaques_query->the_post();
 	?>
-		<div class="bloco-destaques">
 	<?php
    	switch ($counter) {//verifica a contagem de posts para saber qual a posição no layout
 	  	case 1:?>
@@ -78,7 +77,6 @@ $destaques_query->query($destaques_query_args);
 		}
 		$counter++;
 	 	?>
-		</div><!--bloco-destaques-->
 		<?php endwhile; ?>
 	<div class='clearfix'></div>
     <div id="pagination">
