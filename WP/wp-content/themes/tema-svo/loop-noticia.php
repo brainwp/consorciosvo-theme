@@ -25,8 +25,8 @@ $noticias_query->query($noticias_query_args);
 	<div class='clearfix'></div>
 
     <div id="pagination2">
-    	<?php next_posts_link('Notícias Antigas', $noticias_query->max_num_pages) ?>
-    	<?php previous_posts_link('Notícias Rececentes') ?>
+    	<?php next_posts_link('<div class="nav-antes noticias"></div>', $noticias_query->max_num_pages) ?>
+    	<?php previous_posts_link('<div class="nav-depois noticias"></div>') ?>
     </div>
 </div><!-- #noticias-ajax -->
 

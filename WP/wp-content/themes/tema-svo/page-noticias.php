@@ -30,6 +30,7 @@ get_header(); ?>
 						 */
 						?>
 						<div class="bloco-destaque"><?php get_template_part( 'loop', 'destaques');?></div>
+						<hr>
 						<div class="bloco-noticia "><?php get_template_part( 'loop', 'noticia');?></div>
 
 					<?php endwhile;

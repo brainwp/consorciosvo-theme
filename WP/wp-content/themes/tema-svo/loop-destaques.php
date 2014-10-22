@@ -8,10 +8,13 @@ $destaques_query->query($destaques_query_args);
 ?>
 
 <?php while ( $destaques_query->have_posts() ) : $destaques_query->the_post();
-   	switch ($counter) {
+	?>
+		<div class="bloco-destaques">
+	<?php
+   	switch ($counter) {//verifica a contagem de posts para saber qual a posição no layout
 	  	case 1:?>
 			<?php
-			 	if ($destaques_query->post_count == 1 ){
+			 	if ($destaques_query->post_count == 1 ){//verifica se o número de posts exibidos é menos que 3 para não "quebrar o layout"
 					echo '<div class="espaco col-md-3"></div><div class="noticia inline-block col-md-6"'; 
 				}
 				else if ($destaques_query->post_count == 2 ){
@@ -74,11 +77,13 @@ $destaques_query->query($destaques_query_args);
        	break;
 		}
 		$counter++;
-	 	endwhile; ?>
+	 	?>
+		</div><!--bloco-destaques-->
+		<?php endwhile; ?>
 	<div class='clearfix'></div>
     <div id="pagination">
-    	<?php next_posts_link('Destaques Antigos', $destaques_query->max_num_pages) ?>
-    	<?php previous_posts_link('Destaques Rececentes') ?>
+    	<?php next_posts_link('<div class="nav-antes"></div>', $destaques_query->max_num_pages) ?>
+    	<?php previous_posts_link('<div class="nav-depois"></div>') ?>
     </div>
 </div><!-- #destaques-noticias -->
 
