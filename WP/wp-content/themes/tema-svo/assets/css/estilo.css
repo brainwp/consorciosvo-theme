@@ -366,10 +366,19 @@ ul,ol{
 }
 #pagination, #pagination2{
 text-align:center;}
-#noticias .row.principal{
-	min-height:900px;
+#noticias .esquerda{
+	min-height:1160px;
+}
+.noticia.col-md-3{
+	min-height: 398px;
 }
 .bloco-destaque{
-	min-height:500px;
+	min-height:650px;
+}
+.bloco-noticia{
+	min-height:400px;
+}
+#noticia-destaque2{
+	margin-top:32px;
 }
 
