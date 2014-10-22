@@ -7,24 +7,43 @@ $destaques_query = new WP_Query();
 $destaques_query->query($destaques_query_args);
 ?>
 
-<?php while ( $destaques_query->have_posts() ) : $destaques_query->the_post(); ?>
-   <?php switch ($counter) {
+<?php while ( $destaques_query->have_posts() ) : $destaques_query->the_post();
+   	switch ($counter) {
 	  	case 1:?>
-			 <div class="noticia inline-block col-md-7" id="<?php echo 'noticia-destaque'.$counter;?>">
+			<?php
+			 	if ($destaques_query->post_count == 1 ){
+					echo '<div class="espaco col-md-3"></div><div class="noticia inline-block col-md-6"'; 
+				}
+				else if ($destaques_query->post_count == 2 ){
+					echo '<div class="noticia inline-block col-md-6"'; 
+				}
+				else{
+					echo '<div class="noticia inline-block col-md-7"';
+				}				
+				?>" 
+				id="<?php echo 'noticia-destaque'.$counter;?>">
 				<a class="titulo" href="<?php echo post_permalink($post->ID); ?>"><h2><?php the_title(); ?></h2></a>
 				<div class="post-thumbnail"><?php if ( has_post_thumbnail() ) {the_post_thumbnail();}?>
+					<div class="data">
+						<?php echo get_the_date()?>
+					</div>
 					<?php the_excerpt(); ?> 
 
 				</div><!--post-thumbnail-->
-				<div class="data">
-					<?php echo get_the_date()?>
-				</div>
+				
 			</div> <!-- noticia-->
 	
 		<?php 
 		break;
-		case 2:?>
-			 <div class="noticia inline-block col-md-5" id="<?php echo 'noticia-destaque'.$counter;?>">
+		case 2:
+			if ($destaques_query->post_count == 2 ){
+				echo '<div class="noticia inline-block col-md-6"'; 
+			}
+			else{
+				echo'<div class="noticia inline-block col-md-5"';
+			}
+		?>
+			  id="<?php echo 'noticia-destaque'.$counter;?>">
 	    		
 				<a class="titulo" href="<?php echo post_permalink($post->ID); ?>"><h3><?php the_title(); ?></h3></a>
 				<div class="post-thumbnail col-md-6"><?php if ( has_post_thumbnail() ) {the_post_thumbnail();}?>
@@ -42,10 +61,12 @@ $destaques_query->query($destaques_query_args);
 			 <div class="noticia inline-block col-md-5" id="<?php echo 'noticia-destaque'.$counter;?>">
 	    		
 				<a class="titulo" href="<?php echo post_permalink($post->ID); ?>"><h2><?php the_title(); ?></h2></a>
-				<div class="post-excerpt"><?php the_excerpt(); ?></div>
 				<div class="data">
 					<?php echo get_the_date()?>
 				</div>
+				<div class="post-excerpt">
+				<?php the_excerpt(); ?></div>
+				
 
 			</div> <!-- noticia-->
 	

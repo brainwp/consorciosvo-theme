@@ -381,4 +381,16 @@ text-align:center;}
 #noticia-destaque2{
 	margin-top:32px;
 }
+#noticia-destaque3 h2{
+	font-size:32px;
+}
+.data{
+	color:#17437a;
+	font-size:0.9em;
+	font-weight:bolder;
+}
+.espaco{
+	min-height:100px;
+	content:'.';
+}
 
