@@ -2,7 +2,7 @@
 <?php
 			global $counter;
 			global $cat;
-            if (is_front_page()){
+            if (!is_archive()){
 				$args = array(
 	                'post_type' => 'eventos',
 	                'cat_agenda' => $cat,

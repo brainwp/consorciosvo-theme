@@ -112,7 +112,7 @@ footer ul li a:hover{
 .row.principal{
 	margin-bottom:35px;
 }
-#noticias > div, #biblioteca > div, footer > div{
+#noticias-section > div, #biblioteca > div, footer > div{
 	display:inline-block;
 	float:left;
 }
@@ -177,7 +177,9 @@ section .slide p{
 	padding:20px;
 	margin:10px;
 	width:300px;
+	border-radius: 11px;
 }
+
 #primeira-linha{
 	width: 960px;
 	margin: 0 auto;
@@ -362,3 +364,10 @@ ul,ol{
     font-size:20px;
     color:#999;
 }
+#pagination, #pagination2{
+text-align:center;}
+#noticias .row.principal{
+	min-height:700px;
+	
+}
+

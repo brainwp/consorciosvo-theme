@@ -13,7 +13,7 @@
 get_header(); ?>
 
 	<div class="col-md-8 esquerda"><!--esquerda-->
-		<section id="noticias" class="row">
+		<section id="noticias-section" class="row">
 			<h1>Notícias</h1>
 			
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -28,7 +28,7 @@ get_header(); ?>
 				<div class="carousel-inner">
 				<?php
 				$count = 0;
-				$args = array( 'post_type' => 'noticia', 'meta_key' =>'destacar', 'meta_value'=> TRUE, 'posts_per_page' => 4 );
+				$args = array( 'post_type' => 'post', 'meta_key' =>'destacar', 'meta_value'=> TRUE, 'posts_per_page' => 4 );
 				$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post();
 						?>

@@ -9,8 +9,6 @@
  */
 
 get_header(); ?>
-<?php the_breadcrumb(); ?>
-
 	<div class="col-md-8 esquerda"><!--esquerda-->
 				<?php
 								// Start the Loop.

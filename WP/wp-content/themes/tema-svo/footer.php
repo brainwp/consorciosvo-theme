@@ -55,5 +55,29 @@
 	</div><!-- .container -->
 
 	<?php wp_footer(); ?>
+	<script>
+	jQuery(function($) {
+	    $('#destaques-noticias').on('click', '#pagination a', function(e){
+	        e.preventDefault();
+	        var link = $(this).attr('href');
+	        $('#destaques-noticias').fadeOut(500, function(){
+	            $(this).load(link + ' #destaques-noticias', function() {
+	                $(this).fadeIn(500);
+	            });
+	        });
+	    });
+	});
+	jQuery(function($) {
+	    $('#noticias-ajax').on('click', '#pagination2 a', function(e){
+	        e.preventDefault();
+	        var link = $(this).attr('href');
+	        $('#noticias-ajax').fadeOut(500, function(){
+	            $(this).load(link + ' #noticias-ajax', function() {
+	                $(this).fadeIn(500);
+	            });
+	        });
+	    });
+	});
+	</script>
 </body>
 </html>

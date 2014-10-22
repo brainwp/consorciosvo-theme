@@ -1,6 +1,6 @@
 <?php 
 
-$custom_query_args = array( 'post_type' => 'post',
+$custom_query_args = array( 'post_type' => 'post', 'meta_key' =>'destacar',
   'posts_per_page'=>'9');
 
 // Get current page and append to custom query parameters array
@@ -21,7 +21,7 @@ $counter=1;
 
   <!-- the loop -->
   <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
-    <div class="noticia inline-block col-md-4">
+    <div class="noticia inline-block col-md-4" id="<?php echo 'noticia-'.$counter;?>">
 		<a class="titulo" href="<?php echo post_permalink($post->ID); ?>"><h2><?php the_title(); ?></h2></a>
 		<div class="post-thumbnail"><?php if ( has_post_thumbnail() ) {the_post_thumbnail();}?>
 			<div class="data">
@@ -35,7 +35,7 @@ $counter=1;
 	</div> <!-- noticia-->
 	<?php $mod=$counter % 3;
 				if ($mod==0) {
-			echo "<div class='clearfix'></div>";
+			echo "<div class='clearfixo'></div>";
 			}
 			$counter++;?>
 
@@ -45,11 +45,11 @@ $counter=1;
 
 
 <?php // Reset postdata
-$total_pages = $custom_query->max_num_pages;  
-if ($total_pages > 1){  
-$current_page = max(1, get_query_var('paged'));  
-echo '<div class="page_nav">';  
-echo paginate_links(array(  
+$total_pages = $custom_query->max_num_pages;
+if ($total_pages > 1){
+$current_page = max(1, get_query_var('paged'));
+echo '<div class="page_nav">';
+echo paginate_links(array( 
   'base' => get_pagenum_link(1) . '%_%',  
   'format' => '/page/%#%',  
   'current' => $current_page,  

@@ -31,7 +31,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class();?> id="<?php echo get_query_var('name');?>">
 	<div class="container">
 		<header id="header"  class="container" role="banner">
 			<?php

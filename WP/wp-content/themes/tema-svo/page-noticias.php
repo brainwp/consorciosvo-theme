@@ -14,8 +14,6 @@
  */
 
 get_header(); ?>
-<?php the_breadcrumb(); ?>
-
 	<div class="col-md-11 esquerda">
 			<?php the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' ); ?>
 			
@@ -30,7 +28,8 @@ get_header(); ?>
 						 * use this in a child theme, then include a file called called content-___.php
 						 * (where ___ is the post format) and that will be used instead.
 						 */
-						get_template_part( 'loop', 'noticias');
+						get_template_part( 'loop', 'destaques');
+						get_template_part( 'loop', 'noticia');
 
 					endwhile;
 

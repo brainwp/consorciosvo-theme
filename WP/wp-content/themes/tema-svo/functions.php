@@ -311,7 +311,7 @@ require_once get_template_directory() . '/assets/php/custom-posts.php';
 
 function custom_excerpt_length($length) {
     global $post;
-    if ($post->post_type == 'noticia')
+    if ($post->post_type == 'post')
     return 40;
     else
     return 80;
