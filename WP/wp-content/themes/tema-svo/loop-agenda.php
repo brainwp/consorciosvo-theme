@@ -2,15 +2,29 @@
 <?php
 			global $counter;
 			global $cat;
-            $args = array(
-                'post_type' => 'eventos',
-                'cat_agenda' => $cat,
-                "meta_key" => "agenda-event-date", // Campo da Data do Evento
-                "orderby" => "meta_value", // This stays as 'meta_value' or 'meta_value_num' (str sorting or numeric sorting)
-                "order" => "DESC",
-				'posts_per_page'=>'9',
-                'paged' => $paged,
-                );
+            if (is_front_page()){
+				$args = array(
+	                'post_type' => 'eventos',
+	                'cat_agenda' => $cat,
+	                "meta_key" => "agenda-event-date", // Campo da Data do Evento
+	                "orderby" => "meta_value", // This stays as 'meta_value' or 'meta_value_num' (str sorting or numeric sorting)
+	                "order" => "DESC",
+					'posts_per_page'=>'1',
+	                'paged' => false,
+	                );
+				}
+			else{
+				$args = array(
+	                'post_type' => 'eventos',
+	                'cat_agenda' => $cat,
+	                "meta_key" => "agenda-event-date", // Campo da Data do Evento
+	                "orderby" => "meta_value", // This stays as 'meta_value' or 'meta_value_num' (str sorting or numeric sorting)
+	                "order" => "DESC",
+					'posts_per_page'=>'9',
+	                'paged' => $paged,
+	                );
+			}
+			
 
             $loop_agenda = new WP_Query( $args );
             while ( $loop_agenda->have_posts() ) : $loop_agenda->the_post();

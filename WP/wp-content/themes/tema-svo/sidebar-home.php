@@ -25,11 +25,8 @@
 						    </div>
 						    <button type="submit" class="btn btn-primary">Enviar</button>
 						</form>
-					</section><?php
-		if ( ! dynamic_sidebar( 'barra-principal' ) ) {
-			the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ) );
-			the_widget( 'WP_Widget_Archives', array( 'count' => 0, 'dropdown' => 1 ) );
-			the_widget( 'WP_Widget_Tag_Cloud' );
-		}
-	?>
+					</section>
+					<section id="noticias-home" class="modulo-sidebar">
+						<?php get_template_part("loop", "agenda")?>
+					</section>
 </div><!-- #secondary -->
