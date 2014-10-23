@@ -1,0 +1,79 @@
+********************************************************************************
+PACKAGE-LOG: 2014-10-23 15:38:08
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	0.5.8
+WORDPRESS:	3.9.2
+PHP INFO:	5.4.4 | SAPI: apache2handler
+SERVER:		Apache 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 5000M (40M default) 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP
+MYSQLDUMP:    Is Supported
+MYSQLTIMEOUT: 5000 
+TABLES: total:12 | filtered:0 | create:12 
+FILTERED: [] 
+wp_commentmeta (0) 
+wp_comments (1) 
+wp_duplicator_packages (1) 
+wp_links (0) 
+wp_options (154) 
+wp_postmeta (834) 
+wp_posts (338) 
+wp_term_relationships (46) 
+wp_term_taxonomy (5) 
+wp_terms (5) 
+wp_usermeta (26) 
+wp_users (1) 
+SQL CREATED: planos01_544920d408a3b8620141023153756_database.sql 
+SQL FILE SIZE: 836KB 
+SQL RUNTIME: 0.12 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  /Applications/MAMP/htdocs/svo/WP 
+ARCHIVE FILE: planos01_544920d408a3b8620141023153756_archive.zip 
+FILTERS: *OFF* 
+DIRS:  not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	29.52MB 
+STATS:	Dirs 191 | Files 1,665 | Links 0 
+SQL ADDED: planos01_544920d408a3b8620141023153756_database.sql 
+WARNING: Unable to zip directory: '/Applications/MAMP/htdocs/svo/WP' 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 1856
+    [filename] => /Applications/MAMP/htdocs/svo/WP/wp-snapshots/tmp/planos01_544920d408a3b8620141023153756_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 15.08MB 
+ARCHIVE RUNTIME: 6.69 sec. 
+
+******************************************************************************** 
+INSTALLER: 
+******************************************************************************** 
+INSTALLER FILE: Build Start 
+INSTALLER FILE: Build Finished 
+INSTALLER FILE: Preping for use 
+INSTALLER FILE: Template parsed with new data 
+INSTALLER FILE: Complete [/Applications/MAMP/htdocs/svo/WP/wp-snapshots/tmp/planos01_544920d408a3b8620141023153756_installer.php] 
+INSTALLER FILE: Added to archive 
+
+********************************************************************************
+RECORD ID:[1]
+FILE SIZE: Archive:15.08MB | SQL:836KB | Installer:414.45KB
+TOTAL PROCESS RUNTIME: 7.69 sec.
+DONE PROCESSING => planos01 2014-10-23 15:38:16
+********************************************************************************
+ 

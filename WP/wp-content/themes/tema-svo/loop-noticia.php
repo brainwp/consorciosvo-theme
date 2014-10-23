@@ -9,7 +9,8 @@ $noticias_query->query($noticias_query_args);
 ?>
 
 <?php while ( $noticias_query->have_posts() ) : $noticias_query->the_post(); ?>
-    <div class="noticia inline-block col-md-3" id="<?php echo 'noticia-'.$counter;?>">
+    
+	<div class="noticia inline-block col-md-3" id="<?php echo 'noticia-'.$counter;?>">
 		<a class="titulo" href="<?php echo post_permalink($post->ID); ?>"><h3><?php the_title(); ?></h3></a>
 			<div class="data">
 				<?php echo get_the_date()?>

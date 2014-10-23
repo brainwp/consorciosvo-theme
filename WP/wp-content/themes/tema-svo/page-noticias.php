@@ -36,7 +36,7 @@ get_header(); ?>
 						<hr>
 						<div class="bloco-noticia ">
 							<?php get_template_part( 'loop', 'noticia');?>
-							<a class="nav-cima" href="#destaques-noticias"></a>
+							<a class="nav-cima" href="#menu-principal"></a>
 							
 						</div>
 
