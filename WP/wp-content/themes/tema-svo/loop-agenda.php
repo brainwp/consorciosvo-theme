@@ -2,17 +2,29 @@
 <?php
 			global $counter;
 			global $cat;
-            if (!is_archive()){
+            if (is_single()){
 				$args = array(
 	                'post_type' => 'eventos',
 	                'cat_agenda' => $cat,
 	                "meta_key" => "agenda-event-date", // Campo da Data do Evento
 	                "orderby" => "meta_value", // This stays as 'meta_value' or 'meta_value_num' (str sorting or numeric sorting)
 	                "order" => "DESC",
-					'posts_per_page'=>'1',
+					'posts_per_page'=>'2',
 	                'paged' => false,
+					'offset' => '1'
 	                );
 				}
+			else if	(!is_archive()){
+					$args = array(
+		                'post_type' => 'eventos',
+		                'cat_agenda' => $cat,
+		                "meta_key" => "agenda-event-date", // Campo da Data do Evento
+		                "orderby" => "meta_value", // This stays as 'meta_value' or 'meta_value_num' (str sorting or numeric sorting)
+		                "order" => "DESC",
+						'posts_per_page'=>'1',
+		                'paged' => false,
+		                );
+					}
 			else{
 				$args = array(
 	                'post_type' => 'eventos',
@@ -57,6 +69,7 @@
                                     <a href="<?php the_permalink() ?>">
                                     <div class="data-evento-agenda">
                                         <?php
+											global $mes;
                                             $data_invertida = $ag_data;
                                             /* Quebra a Data em 3 */
                                             $data_explode = explode("/", $data_invertida);

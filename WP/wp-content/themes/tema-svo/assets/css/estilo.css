@@ -197,7 +197,7 @@ section .slide p{
 	height: 70px;
 	
 }
-.evento-agenda a{
+.evento-agenda a, .hora-evento{
 	color:#ffffff;
 	
 }
@@ -439,4 +439,24 @@ ul,ol{
 }
 .single-post .entry-title{
 	margin-top:50px;
+}
+.sem-margem{
+	margin:0;
+}
+.single-post .byline{
+	display:none;
+}
+.single-eventos-thumbnail{
+}
+.single-eventos .entry-header {
+	margin-top:30px;
+}
+.single-eventos .entry-content{
+	margin-top:20px;
+}
+.entry-header h2{
+	margin:0;
+}
+.negrito{
+	font-weight:bolder;
 }
