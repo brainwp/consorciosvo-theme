@@ -17,9 +17,32 @@ function noticias_cpt() {
         )
     );
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function destaque_lateral_cpt() {
+    $destaque_lateral = new Odin_Post_Type(
+        'Destaque Lateral', // Nome (Singular) do Post Type.
+        'destaque-lateral' // Slug do Post Type.
+    );
 
+    $destaque_lateral->set_labels(
+        array(
+            'menu_name' => __( 'Destaque Lateral', 'odin' ),
+			'add_new_item' => __('Destaque Lateral'),
+			'name' =>__('Destaques Laterais'),
+			'all_items' => __('Todos os Destaques Laterais')
 
-///////////////////////////////////////////////////////////
+        )
+    );
+
+    $destaque_lateral->set_arguments(
+        array(
+            'supports' => array( 'title', 'editor', 'thumbnail')
+        )
+    );
+}
+add_action( 'init', 'destaque_lateral_cpt', 1 );
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function biblioteca_cpt() {
     $biblioteca = new Odin_Post_Type(
         'Item de biblioteca', // Nome (Singular) do Post Type.
