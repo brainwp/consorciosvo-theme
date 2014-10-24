@@ -364,3 +364,23 @@ global $post;
     elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
     echo '</ul>';
 }
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+// Inserindo novos Menus para o Rodapé
+
+	add_action( 'init', 'register_my_menus' );
+		 
+		function register_my_menus() {
+		register_nav_menus(
+		array(
+		'sitemap-1' => __( 'Site Map Coluna 1' ),
+		'sitemap-2' => __( 'Site Map Coluna 2' ),
+		'sitemap-3' => __( 'Site Map Coluna 3' ),
+		'sitemap-4' => __( 'Site Map Coluna 4' ),
+		'sitemap-5' => __( 'Site Map Coluna 5' ),		
+		'sitemap-6' => __( 'Site Map Coluna 6' )			
+			
+		)
+		);
+		}

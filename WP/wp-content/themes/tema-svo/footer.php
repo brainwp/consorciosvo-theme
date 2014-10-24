@@ -13,34 +13,11 @@
 		<footer class= "container">
 			<div class="row">
 				<div id="sitemap" class="col-md-9">
-					<ul class="mapa">
-				        <li><a href="#">O que é o consórcio</a></li>
-				        <li class="">
-				          <a href="#" class="">Plano regional(PUI) </a>
-				          <ul class="" >
-				            <li><a href="#1">O que é</a></li>
-				            <li><a href="#">Histórico</a></li>
-				            <li><a href="#">Etapas</a></li>
-				            <li><a href="#">Biblioteca</a></li>
-				            <li><a href="#">Eventos</a></li>
-				            <li><a href="#">Participe</a></li>
-				          </ul>
-				        </li>
-						<li class="">
-				          <a href="#" class="">Planos diretores Itaparica e Vera Cruz (PDDU) </a>
-				          <ul class="" >
-				            <li><a href="#">O que é</a></li>
-				            <li><a href="#">Histórico</a></li>
-				            <li><a href="#">Etapas</a></li>
-				            <li><a href="#">Biblioteca</a></li>
-				            <li><a href="#">Eventos</a></li>
-				            <li><a href="#">Participe</a></li>
-				          </ul>
-				        </li>
-				        <li><a href="#">Notícias</a></li>
-				        <li><a href="#">Agenda</a></li>
-						</a></li>
-				      </ul>
+						<?php wp_nav_menu( array( 'theme_location' => 'sitemap-1','container_class' => 'mapa inline-block') ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'sitemap-2' ,'container_class' => 'mapa inline-block') ); ?>
+				 		<?php wp_nav_menu( array( 'theme_location' => 'sitemap-3' ,'container_class' => 'mapa inline-block') ); ?>
+				 		<?php wp_nav_menu( array( 'theme_location' => 'sitemap-4' ,'container_class' => 'mapa inline-block') ); ?>
+				 		<?php wp_nav_menu( array( 'theme_location' => 'sitemap-5' ,'container_class' => 'mapa inline-block') ); ?>
 				</div>
 				<div id="logos" class="col-md-3"><img class="logos" src="<?php echo get_stylesheet_directory_uri().'/assets/images/logos1.png'?>"><div class=clearfix></div><img class="logos"src="<?php echo get_stylesheet_directory_uri().'/assets/images/logos2.png'?>">
 				</div>

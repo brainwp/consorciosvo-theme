@@ -90,7 +90,7 @@ footer ul li a, #contatos p{
 	text-decoration:none;
 	
 }
-.mapa >li > a{
+.mapa > ul > li > a{
 	color:#00aee5;
 	font-weight: bolder;
 	
@@ -219,7 +219,7 @@ section .slide p{
 	font-size:1.9em;
 }
 .esquerda h2{
-	font-size: 39px;
+	font-size: 32px;
     
 }
 .esquerda {
@@ -318,7 +318,7 @@ footer.container, html #DIV_5{
 	width: 330px;
 	margin: 0px 20px 0 -70px;
 }
-.mapa > li{
+.mapa  li{
 	display:inline-block;
 	vertical-align:top;
 	margin:10px;
@@ -460,3 +460,7 @@ ul,ol{
 .negrito{
 	font-weight:bolder;
 }
+hr{
+	border-top: 1px solid #DFD0D0;
+}
+
