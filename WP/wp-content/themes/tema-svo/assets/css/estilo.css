@@ -434,3 +434,9 @@ ul,ol{
 .post-thumbnail.col-md-6{
 	float:right;
 }
+.single-post #comments form{
+	max-width:500px;	
+}
+.single-post .entry-title{
+	margin-top:50px;
+}

@@ -7,7 +7,8 @@
  */
 
 get_header(); ?>
-	<div class="col-md-8 esquerda"><!--esquerda-->
+	<div class="col-md-1 inline-block"></div>
+	<div class="col-md-9 esquerda"><!--esquerda-->
 			<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
@@ -23,7 +24,6 @@ get_header(); ?>
 					endif;
 				endwhile;?>
 			</div>
-			<?php get_sidebar( 'biblioteca' ); ?>
 		</div><!--row principal-->
 		</div><!--container pagina-->
 <?php
