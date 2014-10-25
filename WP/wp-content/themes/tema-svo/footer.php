@@ -14,8 +14,8 @@
 			<div class="row">
 				<div id="logos" class="col-md-12">
 					<img class="logos col-md-1" src="<?php echo get_stylesheet_directory_uri().'/assets/images/logos1.png'?>">
-					<img class="logos col-md-1" src="<?php echo get_stylesheet_directory_uri().'/assets/images/logo-itaparica.png'?>">
-					<img class="logos col-md-1" src="<?php echo get_stylesheet_directory_uri().'/assets/images/logo-vera-cruz.png'?>">
+					<!-- <img class="logos col-md-1" src="<?php echo get_stylesheet_directory_uri().'/assets/images/logo-itaparica.png'?>"> -->
+					<!-- <img class="logos col-md-1" src="<?php echo get_stylesheet_directory_uri().'/assets/images/logo-vera-cruz.png'?>"> -->
 				</div>
 				<div id="sitemap" class="col-md-12">
 						<?php wp_nav_menu( array( 'theme_location' => 'sitemap-1','container_class' => 'mapa inline-block') ); ?>

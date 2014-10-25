@@ -317,6 +317,9 @@ footer.container, html #DIV_5{
 .logos{
 	width: 330px;
 }
+ul ul{
+	padding:0;
+}
 .mapa  li{
 	display:inline-block;
 	vertical-align:top;
@@ -438,6 +441,10 @@ ul,ol{
 }
 .single-post .entry-title{
 	margin-top:50px;
+}
+.entry-date{
+	font-style: italic;
+	font-size: 0.9em;
 }
 .sem-margem{
 	margin:0;
