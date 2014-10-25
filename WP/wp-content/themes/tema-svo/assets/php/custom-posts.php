@@ -64,7 +64,67 @@ function biblioteca_cpt() {
 
 add_action( 'init', 'biblioteca_cpt', 1 );
 ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+function odin_biblioteca_taxonomy2() {
+    $biblioteca2 = new Odin_Taxonomy(
+        'Local', // Nome (Singular) da nova Taxonomia.
+        'local', // Slug do Taxonomia.
+        'biblioteca' // Nome do tipo de conteúdo que a taxonomia irá fazer parte.
+    );
 
+    $biblioteca2->set_labels(
+        array(
+            'menu_name' => __( 'Local do item de biblioteca', 'odin' ),
+			'name'                       => __( 'Local', 'odin' ),
+			'singular_name'              => __( 'Local', 'odin' ),
+			'add_or_remove_items'        => __( 'Adicionar ou remover locais', 'odin' ),
+			'view_item'                  => __( 'Ver locais', 'odin' ),
+			'edit_item'                  => __( 'Editar locais', 'odin' ),
+			'search_items'               => __( 'Buscar Locais', 'odin' ),
+			'update_item'                => __( 'Update Locais', 'odin' ),
+			'parent_item'                => __( 'Parent Locais:', 'odin' ),
+			'parent_item_colon'          => __( 'Parent Locais:', 'odin' ),
+			'add_new_item'               => __( 'Adicionar novo local', 'odin' ),
+			'new_item_name'              => __( 'Novo Local', 'odin' ),
+			'all_items'                  => __( 'Todos os locais', 'odin' ),
+			'separate_items_with_commas' => __( 'Separe os locais com virgulas.', 'odin' ),
+			'choose_from_most_used'      => __( 'Escolha entre os locais mais usados', 'odin' ), 
+        )
+    );
+
+    $biblioteca2->set_arguments(
+        array(
+            'hierarchical' => true
+        )
+    );
+}
+
+add_action( 'init', 'odin_biblioteca_taxonomy2', 1 );
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+function odin_biblioteca_taxonomy() {
+    $biblioteca = new Odin_Taxonomy(
+        'Tipo de Item', // Nome (Singular) da nova Taxonomia.
+        'tipo', // Slug do Taxonomia.
+        'biblioteca' // Nome do tipo de conteúdo que a taxonomia irá fazer parte.
+    );
+
+    $biblioteca->set_labels(
+        array(
+            'menu_name' => __( 'Tipos de item de biblioteca', 'odin' )
+        )
+    );
+
+    $biblioteca->set_arguments(
+        array(
+            'hierarchical' => true
+        )
+    );
+}
+
+add_action( 'init', 'odin_biblioteca_taxonomy', 1 );
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 	if(function_exists("register_field_group"))
 	{
 		register_field_group(array (
