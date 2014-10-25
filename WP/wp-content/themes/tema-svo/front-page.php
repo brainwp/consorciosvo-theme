@@ -64,17 +64,15 @@ get_header(); ?>
 			</div><!--carousel-inner-->
 			
 		</section>
-		<section id="biblioteca" class="row">
-			<h1>Biblioteca</h1>
-		 	<p>teste</p>
-			<?php
+		<section id="Texto-Home" class="row">
 			
-			$args = array( 'post_type' => 'page', 'meta_key' =>'_wp_page_template', 'meta_value'=> 'page-biblioteca.php', 'posts_per_page' => 4 );
-			$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post();
-					echo '<p>teste'.get_field('texto_da_home').'</p>';
-				endwhile;
+			<?php $odin_general_opts = get_option( 'odin_general' );
+				echo $odin_general_opts['texto-biblioteca'];
 			?>
+			
+			<!-- <h1>Biblioteca</h1>
+					 	<p>teste</p>
+						 -->
 		
 			<!-- <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</h4>
 									<div id="item-bibli" class="col-md-4">

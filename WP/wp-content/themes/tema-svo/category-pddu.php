@@ -23,6 +23,7 @@ if (isset($_GET["local"])){
 	}
 	else if ($_GET["local"] == "pui"){		
 		$cat="plano-regional";
+		echo "teste";
 	}
 }
 else {

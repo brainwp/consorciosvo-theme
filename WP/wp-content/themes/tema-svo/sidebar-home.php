@@ -9,9 +9,13 @@
 					<section id="pagina-home" class="modulo-sidebar">
 						<?php get_template_part("loop", "sidebar")?>
 					</section>
+					<?php global $odin_general_opts;
+					if (isset($odin_general_opts['mostra-evento'])):
+						?>
 					<section id="noticias-home" class="modulo-sidebar">
 						<?php get_template_part("loop", "agenda")?>
 					</section>
+					<?php endif;?>
 					<!-- <section id="participe" class="modulo-sidebar">
 											<h2>Participe</h2>
 											<div id="contatos"><img src="<?php echo get_stylesheet_directory_uri().'/assets/images/face.png'?>"><img src="<?php echo get_stylesheet_directory_uri().'/assets/images/email.png'?>"><img src="<?php echo get_stylesheet_directory_uri().'/assets/images/skype.png'?>"></div>

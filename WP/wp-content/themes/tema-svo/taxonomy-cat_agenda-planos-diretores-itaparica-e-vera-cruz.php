@@ -16,19 +16,6 @@
  * @since 2.2.0
  */
 get_header();
-if (isset($_GET["local"])){
-	if ($_GET["local"]== "pddu") {
-		$cat="planos-diretores-itaparica-e-vera-cruz";
-		
-	}
-	else if ($_GET["local"] == "pui"){		
-		$cat="plano-regional";
-	}
-}
-else {
-	$cat="";
-	$counter=1;
-}
 
 ?>	<div class="col-md-11 esquerda no-sidebar"><!--esquerda-->
 		<div id="resumo">	
@@ -37,8 +24,10 @@ else {
 					<?php 
 					$counter = 1;?>
 			        <div id="primeira-linha">
-				
-			           <?php get_template_part( 'loop', 'agenda');?>
+					
+			           <?php 
+						$cat = 'planos-diretores-itaparica-e-vera-cruz';
+						get_template_part( 'loop', 'agenda');?>
 						
 						<div class="clearfix"></div>
 						

@@ -11,7 +11,6 @@
 	                "order" => "DESC",
 					'posts_per_page'=>'2',
 	                'paged' => false,
-					'offset' => '1'
 	                );
 				}
 			else if	(!is_archive()){
@@ -23,6 +22,7 @@
 		                "order" => "DESC",
 						'posts_per_page'=>'1',
 		                'paged' => false,
+						'meta_key' => 'destacar_na_home'
 		                );
 					}
 			else{
@@ -37,7 +37,7 @@
 	                );
 			}
 			
-
+			global $loop_agenda;
             $loop_agenda = new WP_Query( $args );
             while ( $loop_agenda->have_posts() ) : $loop_agenda->the_post();
 

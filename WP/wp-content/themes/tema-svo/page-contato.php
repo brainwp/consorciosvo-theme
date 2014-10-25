@@ -9,7 +9,7 @@
  */
 
 get_header(); ?>
-		<div class="col-md-12 esquerda"><!--esquerda-->
+		<div class="col-md-8 esquerda"><!--esquerda-->
 			<?php
 							// Start the Loop.
 							while ( have_posts() ) : the_post();
@@ -21,6 +21,8 @@ get_header(); ?>
 							endwhile;
 						?>
 		</div>	
+		<?php get_sidebar( 'contato' ); ?>
+		
 	</div><!--row principal-->
 	</div><!--container pagina-->
 

@@ -469,4 +469,7 @@ ul,ol{
 hr{
 	border-top: 1px solid #DFD0D0;
 }
+.page_nav a, .page_nav span{
+	font-weight:bold;
+}
 

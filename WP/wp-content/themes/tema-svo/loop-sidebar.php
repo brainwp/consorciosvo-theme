@@ -13,7 +13,7 @@ $barra_lateral->query($barra_lateral_args);
 		 	<?php the_content(); ?> 
 		</div><!--resumo-->
 	</div> <!-- noticia-->
-	<?php 
+	<?php global $counter;
 			$counter++;?>
   <?php endwhile; ?>
 	<div class='clearfix'></div>

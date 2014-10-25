@@ -26,7 +26,7 @@ if ( ! isset( $content_width ) ) {
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
 require_once get_template_directory() . '/core/classes/class-shortcodes.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
-// require_once get_template_directory() . '/core/classes/class-theme-options.php';
+require_once get_template_directory() . '/core/classes/class-theme-options.php';
 // require_once get_template_directory() . '/core/classes/class-options-helper.php';
 require_once get_template_directory() . '/core/classes/class-post-type.php';
 require_once get_template_directory() . '/core/classes/class-taxonomy.php';
@@ -384,3 +384,58 @@ global $post;
 		)
 		);
 		}
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+function opcoes_do_tema(){
+	$odin_theme_options = new Odin_Theme_Options( 
+	    'opcoes-do-tema', // Slug/ID da página (Obrigatório)
+	    __( 'Opções do tema', 'odin' ), // Titulo da página (Obrigatório)
+	    'manage_options' // Nível de permissão (Opcional) [padrão é manage_options]
+	);
+	/////////////////////////////////////////////////////////////////////////////////
+		$odin_theme_options->set_fields(
+		    array(
+		        'general_section' => array(
+		            'tab'   => 'odin_general', // Sessão da aba odin_general
+		            'title' => __( 'Opções da home', 'odin' ),
+		            'fields' => array(
+		                array(
+						    'id'          => 'mostra-evento', // Obrigatório
+						    'label'       => __( 'Mostrar Evento na Home?', 'odin' ), // Obrigatório
+						    'type'        => 'checkbox', // Obrigatório
+						    // 'attributes' => array(), // Opcional (atributos para input HTML/HTML5)
+						    'default'     => '', // Opcional (utilize 1 para deixar marcado como padrão)
+						    'description' => __( 'Se a caixa estiver marcada o evento mais recente destacado ira aparecer na Home', 'odin' ), // Opcional
+						),
+						array(
+						    'id'          => 'texto-biblioteca', // Obrigatório
+						    'label'       => __( 'Texto de descrição para a home', 'odin' ), // Obrigatório
+						    'type'        => 'editor', // Obrigatório
+						    'default'     => 'Default text', // Opcional
+						    'description' => __( 'Descrition Example', 'odin' ), // Opcional
+						    'options'     => array( // Opcional (aceita argumentos do wp_editor)
+						        'textarea_rows' => 10
+						    ),
+						)
+		            )
+		        )
+		    )
+		);
+/////////////////////////////////////////////////////////////////////////////////
+	$odin_theme_options->set_tabs(
+	    array(
+	        array(
+	            'id' => 'odin_general', // ID da aba e nome da entrada no banco de dados.
+	            'title' => __( 'Configurações', 'odin' ), // Título da aba.
+	        )
+	    )
+	);
+	
+}
+add_action( 'init', 'opcoes_do_tema', 1 );
+
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
