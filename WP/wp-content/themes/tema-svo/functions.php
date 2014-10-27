@@ -135,7 +135,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		//     'audio',
 		//     'chat'
 		// ) );
-
+		
 		/**
 		 * Support The Excerpt on pages.
 		 */
@@ -434,7 +434,6 @@ function opcoes_do_tema(){
 	
 }
 add_action( 'init', 'opcoes_do_tema', 1 );
-
 
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////

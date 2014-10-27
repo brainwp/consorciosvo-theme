@@ -65,64 +65,96 @@ function biblioteca_cpt() {
 add_action( 'init', 'biblioteca_cpt', 1 );
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
-function odin_biblioteca_taxonomy2() {
-    $biblioteca2 = new Odin_Taxonomy(
-        'Local', // Nome (Singular) da nova Taxonomia.
-        'local', // Slug do Taxonomia.
-        'biblioteca' // Nome do tipo de conteúdo que a taxonomia irá fazer parte.
-    );
 
-    $biblioteca2->set_labels(
-        array(
-            'menu_name' => __( 'Local do item de biblioteca', 'odin' ),
-			'name'                       => __( 'Local', 'odin' ),
-			'singular_name'              => __( 'Local', 'odin' ),
-			'add_or_remove_items'        => __( 'Adicionar ou remover locais', 'odin' ),
-			'view_item'                  => __( 'Ver locais', 'odin' ),
-			'edit_item'                  => __( 'Editar locais', 'odin' ),
-			'search_items'               => __( 'Buscar Locais', 'odin' ),
-			'update_item'                => __( 'Update Locais', 'odin' ),
-			'parent_item'                => __( 'Parent Locais:', 'odin' ),
-			'parent_item_colon'          => __( 'Parent Locais:', 'odin' ),
-			'add_new_item'               => __( 'Adicionar novo local', 'odin' ),
-			'new_item_name'              => __( 'Novo Local', 'odin' ),
-			'all_items'                  => __( 'Todos os locais', 'odin' ),
-			'separate_items_with_commas' => __( 'Separe os locais com virgulas.', 'odin' ),
-			'choose_from_most_used'      => __( 'Escolha entre os locais mais usados', 'odin' ), 
-        )
-    );
 
-    $biblioteca2->set_arguments(
-        array(
-            'hierarchical' => true
-        )
-    );
-}
-
-add_action( 'init', 'odin_biblioteca_taxonomy2', 1 );
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
-function odin_biblioteca_taxonomy() {
-    $biblioteca = new Odin_Taxonomy(
-        'Tipo de Item', // Nome (Singular) da nova Taxonomia.
-        'tipo', // Slug do Taxonomia.
-        'biblioteca' // Nome do tipo de conteúdo que a taxonomia irá fazer parte.
-    );
-
-    $biblioteca->set_labels(
-        array(
-            'menu_name' => __( 'Tipos de item de biblioteca', 'odin' )
-        )
-    );
-
-    $biblioteca->set_arguments(
-        array(
-            'hierarchical' => true
-        )
-    );
-}
-
-add_action( 'init', 'odin_biblioteca_taxonomy', 1 );
+// Adiciona Taxonomia cat_biblioteca para organizar itens em diagnósticos, mapas, atas e legislação
+register_taxonomy(
+'cat_biblioteca',
+'biblioteca',
+array( 
+'label' => 'Adicionar Categorias ',
+'singular_label' => 'Categoria',
+'rewrite' => true,
+'hierarchical' => true,
+'capabilities' => array(
+        'manage_terms' => 'nobody',
+        'edit_terms' => 'nobody',
+        'delete_terms' => 'nobody',
+    )
+)
+);
+///////////////////////////////////////////////////////////
+	///Insere as categorias dos itens de biblioteca
+	wp_insert_term(
+	  'Diagnósticos', // the term 
+	  'cat_biblioteca', // the taxonomy
+	  array(
+	    'description'=> 'Categoria dos Itens de biblioteca',
+	    'slug' => 'diagnosticos',
+	  )
+	);
+	wp_insert_term(
+	  'Mapas', // the term 
+	  'cat_biblioteca', // the taxonomy
+	  array(
+	    'description'=> 'Categoria dos Itens de biblioteca',
+	    'slug' => 'mapas',
+	  )
+	);
+	wp_insert_term(
+	  'Atas', // the term 
+	  'cat_biblioteca', // the taxonomy
+	  array(
+	    'description'=> 'Categoria dos Itens de biblioteca',
+	    'slug' => 'atas',
+	  )
+	);
+	wp_insert_term(
+	  'Legislação', // the term 
+	  'cat_biblioteca', // the taxonomy
+	  array(
+	    'description'=> 'Categoria dos Itens de biblioteca',
+	    'slug' => 'legislacao',
+	  )
+	);
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+// Adiciona Taxonomia planos para organizar itens em pddu ou pui
+register_taxonomy(
+'planos',
+'biblioteca',
+array( 
+'label' => 'Adicionar Plano ',
+'singular_label' => 'Categoria',
+'rewrite' => true,
+'hierarchical' => true,
+'capabilities' => array(
+        'manage_terms' => 'nobody',
+        'edit_terms' => 'nobody',
+        'delete_terms' => 'nobody',
+    )
+)
+);
+///////////////////////////////////////////////////////////
+///Insere os planos
+wp_insert_term(
+  'Plano regional (PUI) ', // the term 
+  'planos', // the taxonomy
+  array(
+    'description'=> 'Itens de biblioteca do Plano regional (PUI) ',
+    'slug' => 'pui',
+  )
+);
+wp_insert_term(
+  'Planos diretores Itaparica e Vera Cruz (PDDU) ', // the term 
+  'planos', // the taxonomy
+  array(
+    'description'=> 'Itens de biblioteca do Planos diretores Itaparica e Vera Cruz (PDDU) ',
+    'slug' => 'pddu',
+  )
+);
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 	if(function_exists("register_field_group"))

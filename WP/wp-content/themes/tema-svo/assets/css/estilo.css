@@ -472,4 +472,8 @@ hr{
 .page_nav a, .page_nav span{
 	font-weight:bold;
 }
-
+input[type=radio]:checked:before {
+content: '\f147';
+margin: -3px 0 0 -4px;
+color: #1e8cbe;
+}

@@ -51,9 +51,9 @@ get_header();
 					  echo '</div>';  
 					} 
 					?>
-	</div><!--col-md-11 esquerda no-sidebar-->
+					</div><!--row principal-->
 
-</div><!--row principal aberto no header-->
+</div><!--container pagina-->
 
 <?php
 get_footer();

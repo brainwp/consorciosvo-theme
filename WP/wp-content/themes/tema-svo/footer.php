@@ -34,7 +34,7 @@
 			</div> <!--row-->
 			
 		</footer>
-	</div><!-- .container -->
+	</div><!-- .container aberto no header-->
 
 	<?php wp_footer(); ?>
 	<script>
