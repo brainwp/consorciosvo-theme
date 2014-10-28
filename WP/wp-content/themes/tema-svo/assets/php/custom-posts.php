@@ -57,7 +57,9 @@ function biblioteca_cpt() {
 
     $biblioteca->set_arguments(
         array(
-            'supports' => array( 'title', 'editor', 'thumbnail', 'post-formats' )
+            'supports' => array( 'title', 'editor', 'thumbnail', 'post-formats' ),
+		    'hierarchical'        => false,
+
         )
     );
 }

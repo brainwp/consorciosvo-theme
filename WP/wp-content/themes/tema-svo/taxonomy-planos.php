@@ -27,7 +27,9 @@ get_header();
 					?>
 					<header class="archive-header">
 					    <h1 class="archive-title">
-					        <?php echo $plano->name; ?>
+					        <?php if (isset($plano->name)){
+								echo $plano->name;
+								} ?>
 					    </h1>
 					</header><!-- .archive-header -->
 					<?php //start by fetching the terms for the animal_cat taxonomy
@@ -46,23 +48,25 @@ get_header();
 					        'cat_biblioteca' => $term->slug
 					    );
 					    $query = new WP_Query( $args );
+						if ($query->have_posts() ) {
+						
+					    	// output the term name in a heading tag                
+					    	echo'<h2>' . $term->name .'</h2>';
 
-					    // output the term name in a heading tag                
-					    echo'<h2>' . $term->name .'</h2>';
-
-					    // output the post titles in a list
-					    echo '<ul>';
+					    	// output the post titles in a list
+					    	echo '<ul>';
 
 					        // Start the Loop
 					        while ( $query->have_posts() ) : $query->the_post(); ?>
 
-					        <li class="" id="post-<?php the_ID(); ?>">
-					            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					        </li>
+					        	<li class="" id="post-<?php the_ID(); ?>">
+					            	<a href="<?php the_permalink($post->ID); ?>"><?php the_title(); ?></a>
+					        	</li>
 
 					        <?php endwhile;
-
-					    echo '</ul>';
+						}
+					    	echo '</ul>';
+						
 
 					    // use reset postdata to restore orginal query
 					    wp_reset_postdata();

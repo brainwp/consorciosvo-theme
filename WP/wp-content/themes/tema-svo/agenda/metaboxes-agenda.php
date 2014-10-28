@@ -40,6 +40,7 @@ add_action('admin_menu', 'mytheme_add_box');
 // Adiciona o MetaBox
 function mytheme_add_box() {
     global $meta_box;
+		echo $post->ID;
     add_meta_box(
 		$meta_box['id'],
 		$meta_box['title'], 

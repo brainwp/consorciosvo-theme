@@ -74,6 +74,7 @@
                                             /* Quebra a Data em 3 */
                                             $data_explode = explode("/", $data_invertida);
                                             $mes = $data_explode[1];
+											$dia_da_semana= date("l", mktime(0, 0, 0, $data_explode[1], $data_explode[2], $data_explode[3]));
 
                                             switch ($mes){
                                                 case 1: $mes="Jan"; break;
@@ -90,10 +91,13 @@
                                                 case 12: $mes="Dez"; break;
                                                 default: $mes="Valor invalido"; 
                                             }
+											
+											
 
                                         ?>
-                                        <div class="mes-agenda"><?php echo $mes; ?></div>
+                                        <div class="mes-agenda"><?php echo $mes.'dia da semana: '.$dia_da_semana; ?></div>
                                         <div class="dia-agenda"><?php echo $data_explode[2]; ?></div>
+										
                                     </div><!-- .data-evento-agenda -->
 									<div class="hora-evento"><?php echo $ag_inicio; ?></div>
                             </div><!-- #evento-agenda -->
