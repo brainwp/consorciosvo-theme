@@ -33,20 +33,18 @@ get_header();
 					<?php
 					$count=0;
 					// now run a query for each animal family
-					foreach ( $terms as $term ) {
+					foreach ( $terms as $term) {
 						?>
 						
+						<div id="enrolador-<?php echo $term->slug ; ?>"class="col-md-3">
 						<?php
 					    
 						get_template_part('loop','biblioteca');?>
 							
+						</div>
 							<?php
 						}
 					    	echo '</ul>';
-						
-
-					    
-
 					 ?>
 	
 	</div><!--col-md-11 esquerda no-sidebar-->

@@ -68,7 +68,10 @@
 	jQuery(function($) {
 	    $('html').on('click', '.pagination-biblioteca a', function(e){
 	        e.preventDefault();
+	
 	        var link = $(this).attr('href');
+			console.log(link);
+	
 	        var id = $(this).parent().attr('id');
 			console.log(id);
 			$('.nav-cima').fadeOut(500);

@@ -440,3 +440,13 @@ add_action( 'init', 'opcoes_do_tema', 1 );
 add_action('admin_init', 'flush_rewrite_rules');
 
 /////////////////////////////////////////////////////////////////////////////////
+/////Customiza os posts_per_page por post-type
+/////////////////////////////////////////////////////////////////////////////////
+add_action('pre_get_posts', 'filter_press_tax');
+
+    function filter_press_tax( $query ){
+        if( $query->is_tax('cat_biblioteca')):
+            $query->set('posts_per_page', 1);
+            return $query;
+        endif;
+    }

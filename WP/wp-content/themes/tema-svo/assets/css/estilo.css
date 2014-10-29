@@ -496,3 +496,7 @@ color: #1e8cbe;
 .item-biblioteca a:hover{
 	color:#5E6020;
 }
+.pagination-biblioteca >div {
+	margin: 0 10px;
+}
+}
