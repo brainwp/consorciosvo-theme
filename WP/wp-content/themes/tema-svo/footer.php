@@ -66,12 +66,17 @@
 	    });
 	});
 	jQuery(function($) {
-	    $('#biblioteca-ajax-atas').on('click', '.pagination-biblioteca a', function(e){
+	    $('html').on('click', '.pagination-biblioteca a', function(e){
 	        e.preventDefault();
 	        var link = $(this).attr('href');
+	        var id = $(this).parent().attr('id');
+			console.log(id);
 			$('.nav-cima').fadeOut(500);
-	        $('#biblioteca-ajax-atas').fadeOut(500, function(){
-	            $(this).load(link + ' #biblioteca-ajax-atas', function() {
+			var idAjax = '#biblioteca-ajax-'+id
+			console.log(idAjax);
+			
+	        $(idAjax).fadeOut(500, function(){
+	            $(this).load(link + ' ' + idAjax, function() {
 	                $(this).fadeIn(500);
 					$('.nav-cima').fadeIn(500);
 	            });

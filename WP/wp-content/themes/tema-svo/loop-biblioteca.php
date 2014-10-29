@@ -25,7 +25,7 @@ if ($query->have_posts() ) {
     <?php endwhile;
 }?>
 
-		<div class="pagination-biblioteca" id="pagination-<?php echo $term->slug?>">
+		<div class="pagination-biblioteca" id="<?php echo $term->slug?>">
 			<?php next_posts_link('<div>></div>', $query->max_num_pages) ?>
 			<?php previous_posts_link('<div><</div>') ?>
 		</div>
