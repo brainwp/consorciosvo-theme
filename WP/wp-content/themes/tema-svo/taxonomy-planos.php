@@ -17,22 +17,14 @@
  */
 get_header();
 
-?>	<div class="col-md-11 esquerda no-sidebar"><!--esquerda-->
-		<div id="">	
-			<h1 class=""></h1>
+?>	<div class="col-md-12 esquerda no-sidebar"><!--esquerda-->
+		<div id="titulo-biblioteca">	
+				<h1 class="">Biblioteca</h1>
 		</div><!-- # -->
 					<?php
 					// get the currently queried taxonomy term, for use later in the template file
 					$planos = get_queried_object();
-					?>
-					<header class="archive-header">
-					    <h1 class="archive-title">
-					        <?php if (isset($plano->name)){
-								echo $plano->name;
-								} ?>
-					    </h1>
-					</header><!-- .archive-header -->
-					<?php //start by fetching the terms for the animal_cat taxonomy
+					//Começa a pegar os termos da categoria cat_biblioteca
 					$terms = get_terms( 'cat_biblioteca', array(
 					    'hide_empty' => 0
 					) );
@@ -45,25 +37,35 @@ get_header();
 					    $args = array(
 					        'post_type' => 'biblioteca_item',
 					        'planos' => $planos->slug,
-					        'cat_biblioteca' => $term->slug
+					        'cat_biblioteca' => $term->slug,
+							'posts_per_page'=>'2','paged'=>$paged
 					    );
 					    $query = new WP_Query( $args );
 						if ($query->have_posts() ) {
-						
+						?>
+							<?php next_posts_link('<div class="nav-antes noticias"></div>', $query->max_num_pages) ?>
+					    	<?php previous_posts_link('<div class="nav-depois noticias"></div>') ?>
+							<div id="<?php echo $term->name; ?>" class="cat_biblioteca inline-block col-md-3">
+						<?php
 					    	// output the term name in a heading tag                
-					    	echo'<h2>' . $term->name .'</h2>';
+					    		echo'<div class="titulo-cat-biblioteca"><h2>' . $term->name .'</h2></div>';
 
 					    	// output the post titles in a list
-					    	echo '<ul>';
+					    		echo '<ul id="lista-' . $term->name .'-" class="lista-item-biblioteca ">';
 
 					        // Start the Loop
-					        while ( $query->have_posts() ) : $query->the_post(); ?>
+					        	while ( $query->have_posts() ) : $query->the_post(); ?>
 
-					        	<li class="" id="post-<?php the_ID(); ?>">
-					            	<a href="<?php the_permalink($post->ID); ?>"><?php the_title(); ?></a>
-					        	</li>
-
+					        		<li class="item-biblioteca <?php echo  $term->name;?> " id="post-<?php the_ID(); ?>">
+					            		<a href="<?php the_permalink($post->ID); ?>"><?php the_title(); ?></a>
+					        		</li>
+								
 					        <?php endwhile;
+					
+							?>
+							
+							</div><!--.cat_biblioteca-->
+							<?php
 						}
 					    	echo '</ul>';
 						

@@ -11,7 +11,7 @@
  */
 
 get_header(); ?>
-	<div class="col-md-8 esquerda"><!--esquerda-->
+	<div class="col-md-11 esquerda"><!--esquerda-->
 				<?php
 								// Start the Loop.
 								while ( have_posts() ) : the_post();
@@ -23,7 +23,6 @@ get_header(); ?>
 								endwhile;
 							?>
 	</div>
-	<?php get_sidebar( 'home' ); ?>
 	
 
 </div><!--row principal-->
