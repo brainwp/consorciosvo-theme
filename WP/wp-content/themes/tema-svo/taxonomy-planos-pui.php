@@ -31,18 +31,12 @@ get_header();
 					) );
 					?>
 					<?php
+					$count=0;
 					// now run a query for each animal family
 					foreach ( $terms as $term ) {
 						?>
 						
 						<?php
-					    // Define the query
-					    $args = array(
-					        'post_type' => 'biblioteca_item',
-					        'planos' => $planos->slug,
-					        'cat_biblioteca' => $term->slug,
-							'posts_per_page'=>'1','paged'=>$paged
-					    );
 					    
 						get_template_part('loop','biblioteca');?>
 							
@@ -51,8 +45,7 @@ get_header();
 					    	echo '</ul>';
 						
 
-					    // use reset postdata to restore orginal query
-					    wp_reset_postdata();
+					    
 
 					 ?>
 	

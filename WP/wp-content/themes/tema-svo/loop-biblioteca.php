@@ -1,11 +1,20 @@
 <?php 
 
-global $args;
+global $planos;
 global $term;
 ?><div id="biblioteca-ajax-<?php echo $term->slug;?>">
-	<?php 
-$query = new WP_Query( $args );
-if ($query->have_posts() ) {
+	<?php  
+	$nomepracolocar=$term->slug."_query";
+	echo $nomepracolocar;
+	// Define the query
+    $args = array(
+        'post_type' => 'biblioteca_item',
+        'planos' => $planos->slug,
+        'cat_biblioteca' => $term->slug,
+		'posts_per_page'=>'1','paged'=>$paged
+    );
+${$nomepracolocar} = new WP_Query( $args );
+if ($$nomepracolocar->have_posts() ) {
 ?>
 	<div id="<?php echo $term->slug; ?>" class="cat_biblioteca inline-block col-md-3">
 <?php
@@ -16,7 +25,7 @@ if ($query->have_posts() ) {
 		echo '<ul id="lista-' . $term->slug .'-" class="lista-item-biblioteca ">';
 
     // Start the Loop
-    	while ( $query->have_posts() ) : $query->the_post(); ?>
+    	while ( $$nomepracolocar->have_posts() ) : $$nomepracolocar->the_post(); ?>
 
     		<li class="item-biblioteca <?php echo  $term->slug;?> " id="post-<?php the_ID(); ?>">
         		<a href="<?php the_permalink($post->ID); ?>"><?php the_title(); ?></a>
@@ -25,9 +34,12 @@ if ($query->have_posts() ) {
     <?php endwhile;
 }?>
 
-		<div class="pagination-biblioteca" id="<?php echo $term->slug?>">
-			<?php next_posts_link('<div>></div>', $query->max_num_pages) ?>
-			<?php previous_posts_link('<div><</div>') ?>
+		<div class="pagination-biblioteca" id="<?php echo $term->slug;?>">
+			<?php echo $$nomepracolocar->max_num_pages;?>
+			<?php next_posts_link('<div>></div>', $$nomepracolocar->max_num_pages) ?>
+			<?php previous_posts_link('<div><</div>');
+			// use reset postdata to restore orginal query
+		    wp_reset_postdata();?>
 		</div>
 	</div><!--cat_biblioteca-->
 </div><!--noticias-ajax-->
