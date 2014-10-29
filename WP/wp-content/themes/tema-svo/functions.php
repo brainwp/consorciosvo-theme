@@ -442,11 +442,10 @@ add_action('admin_init', 'flush_rewrite_rules');
 /////////////////////////////////////////////////////////////////////////////////
 /////Customiza os posts_per_page por post-type
 /////////////////////////////////////////////////////////////////////////////////
-add_action('pre_get_posts', 'filter_press_tax');
+function my_custom_posts_per_page( $query ) {
+	if (!is_admin() && is_tax('planos') ){
+        $query->set( 'posts_per_page', 3 );
+	}
+}
 
-    function filter_press_tax( $query ){
-        if( $query->is_tax('cat_biblioteca')):
-            $query->set('posts_per_page', 1);
-            return $query;
-        endif;
-    }
+add_filter('parse_query', 'my_custom_posts_per_page');

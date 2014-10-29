@@ -38,8 +38,13 @@ get_header();
 						
 						<div id="enrolador-<?php echo $term->slug ; ?>"class="col-md-3">
 						<?php
-					    
-						get_template_part('loop','biblioteca');?>
+					    if ($count==0){
+							$count+=1;
+							get_template_part('loop','biblioteca');
+						}
+						?>
+							
+						
 							
 						</div>
 							<?php
