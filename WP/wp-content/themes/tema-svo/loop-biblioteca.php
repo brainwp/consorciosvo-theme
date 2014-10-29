@@ -1,7 +1,9 @@
-<div id="biblioteca-ajax">
 <?php 
+
 global $args;
 global $term;
+?><div id="biblioteca-ajax-<?php echo $term->slug;?>">
+	<?php 
 $query = new WP_Query( $args );
 if ($query->have_posts() ) {
 ?>

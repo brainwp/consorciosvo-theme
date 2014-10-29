@@ -21,6 +21,7 @@ get_header();
 		<div id="titulo-biblioteca">	
 				<h1 class="">Biblioteca</h1>
 		</div><!-- # -->
+		
 					<?php
 					// get the currently queried taxonomy term, for use later in the template file
 					$planos = get_queried_object();
@@ -32,7 +33,9 @@ get_header();
 					<?php
 					// now run a query for each animal family
 					foreach ( $terms as $term ) {
-
+						?>
+						
+						<?php
 					    // Define the query
 					    $args = array(
 					        'post_type' => 'biblioteca_item',
