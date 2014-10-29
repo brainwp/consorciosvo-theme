@@ -65,6 +65,21 @@
 	        });
 	    });
 	});
+	jQuery(function($) {
+	    $('#biblioteca-ajax').on('click', '.pagination-biblioteca a', function(e){
+	        e.preventDefault();
+			var teste = $('.pagination-biblioteca').attr('id');
+	        var link = $(this).attr('href');
+			console.log(teste);
+			$('.nav-cima').fadeOut(500);
+	        $('#biblioteca-ajax').fadeOut(500, function(){
+	            $(this).load(link + ' #biblioteca-ajax', function() {
+	                $(this).fadeIn(500);
+					$('.nav-cima').fadeIn(500);
+	            });
+	        });
+	    });
+	});
 	jQuery(function() {
 	  jQuery('a[href*=#]:not([href=#myCarousel])').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -79,6 +94,7 @@
 	    }
 	  });
 	});
+	
 	</script>
 </body>
 </html>

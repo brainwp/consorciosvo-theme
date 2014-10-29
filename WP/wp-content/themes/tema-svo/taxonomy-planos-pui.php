@@ -40,29 +40,9 @@ get_header();
 					        'cat_biblioteca' => $term->slug,
 							'posts_per_page'=>'1','paged'=>$paged
 					    );
-					    $query = new WP_Query( $args );
-						if ($query->have_posts() ) {
-						?>
-							<div id="<?php echo $term->name; ?>" class="cat_biblioteca inline-block col-md-3">
-						<?php
-					    	// output the term name in a heading tag                
-					    		echo'<div class="titulo-cat-biblioteca"><h2>' . $term->name .'</h2></div>';
-
-					    	// output the post titles in a list
-					    		echo '<ul id="lista-' . $term->name .'-" class="lista-item-biblioteca ">';
-
-					        // Start the Loop
-					        	while ( $query->have_posts() ) : $query->the_post(); ?>
-
-					        		<li class="item-biblioteca <?php echo  $term->name;?> " id="post-<?php the_ID(); ?>">
-					            		<a href="<?php the_permalink($post->ID); ?>"><?php the_title(); ?></a>
-					        		</li>
-								
-					        <?php endwhile;
-					
-							?>
+					    
+						get_template_part('loop','biblioteca');?>
 							
-							</div><!--.cat_biblioteca-->
 							<?php
 						}
 					    	echo '</ul>';
@@ -71,7 +51,7 @@ get_header();
 					    // use reset postdata to restore orginal query
 					    wp_reset_postdata();
 
-					} ?>
+					 ?>
 	
 	</div><!--col-md-11 esquerda no-sidebar-->
 
