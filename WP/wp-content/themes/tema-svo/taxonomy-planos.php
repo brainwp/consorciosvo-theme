@@ -43,7 +43,7 @@ get_header();
 
 					    // Define the query
 					    $args = array(
-					        'post_type' => 'biblioteca',
+					        'post_type' => 'biblioteca_item',
 					        'planos' => $planos->slug,
 					        'cat_biblioteca' => $term->slug
 					    );

@@ -1,23 +1,8 @@
 <?php 
-function noticias_cpt() {
-    $noticia = new Odin_Post_Type(
-        'Notícia', // Nome (Singular) do Post Type.
-        'noticia' // Slug do Post Type.
-    );
 
-    $noticia->set_labels(
-        array(
-            'menu_name' => __( 'Notícias', 'odin' )
-        )
-    );
+//////////////////////////////////////////////////////////
+add_action( 'init', 'destaque_lateral_cpt', 1 );
 
-    $noticia->set_arguments(
-        array(
-            'supports' => array( 'title', 'editor', 'thumbnail', 'post-formats' )
-        )
-    );
-}
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function destaque_lateral_cpt() {
     $destaque_lateral = new Odin_Post_Type(
         'Destaque Lateral', // Nome (Singular) do Post Type.
@@ -39,52 +24,103 @@ function destaque_lateral_cpt() {
             'supports' => array( 'title', 'editor', 'thumbnail')
         )
     );
-}
-add_action( 'init', 'destaque_lateral_cpt', 1 );
+	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function biblioteca_cpt() {
-    $biblioteca = new Odin_Post_Type(
-        'Item de biblioteca', // Nome (Singular) do Post Type.
-        'biblioteca' // Slug do Post Type.
-    );
+	// // CustomPostType destaque
+	// add_action('init', 'destaque_lateral_cpt');
+	// 
+	// // Labels
+	// function destaque_lateral_cpt() {
+	// $labels = array(
+	// 'name' => _x('Destaque', 'post type general name'),
+	// 'singular_name' => _x('Destaque', 'post type singular name'),
+	// 'add_new' => _x('Novo Destaque', 'Novo item'),
+	// 'add_new_item' => __('Novo Destaque'),
+	// 'edit_item' => __('Editar Destaque'),
+	// 'new_item' => __('Novo Destaque'),
+	// 'view_item' => __('Ver Destaque'),
+	// 'search_items' => __('Procurar Destaque'),
+	// 'not_found' => __('Nenhum registro encontrado'),
+	// 'not_found_in_trash' => __('Nenhum registro encontrado na lixeira'),
+	// 'parent_item_colon' => '',
+	// 'menu_name' => 'Destaques'
+	// );
+	// 
+	// $args = array(
+	// 'labels' => $labels,
+	// 'public' => true,
+	// 'public_queryable' => true,
+	// 'show_ui' => true, 
+	// 'query_var' => true,
+	// 'rewrite' => true,
+	// 'capability_type' => 'post',
+	// 'has_archive' => true,
+	// 'hierarchical' => false,
+	// 'menu_position' => null, 
+	// 'supports' => array('title','editor','thumbnail')
+	// );
+	// 
+	// register_post_type( 'destaque-lateral' , $args );
+	// flush_rewrite_rules();
+	// }
+	// 
 
-    $biblioteca->set_labels(
-        array(
-            'menu_name' => __( 'Item de biblioteca', 'odin' )
-        )
-    );
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+// CustomPostType biblioteca
+add_action('init', 'type_post_biblioteca');
 
-    $biblioteca->set_arguments(
-        array(
-            'supports' => array( 'title', 'editor', 'thumbnail', 'post-formats' ),
-		    'hierarchical'        => false,
+// Labels
+function type_post_biblioteca() {
+$labels = array(
+'name' => _x('Biblioteca', 'post type general name'),
+'singular_name' => _x('Biblioteca', 'post type singular name'),
+'add_new' => _x('Novo item de biblioteca', 'Novo item'),
+'add_new_item' => __('Novo Item de biblioteca'),
+'edit_item' => __('Editar Item de biblioteca'),
+'new_item' => __('Novo Item de biblioteca'),
+'view_item' => __('Ver Item de biblioteca'),
+'search_items' => __('Procurar Item de biblioteca'),
+'not_found' => __('Nenhum registro encontrado'),
+'not_found_in_trash' => __('Nenhum registro encontrado na lixeira'),
+'parent_item_colon' => '',
+'menu_name' => 'Item de biblioteca'
+);
 
-        )
-    );
+$args = array(
+'labels' => $labels,
+'public' => true,
+'public_queryable' => true,
+'show_ui' => true, 
+'query_var' => true,
+'rewrite' => true,
+'capability_type' => 'post',
+'has_archive' => true,
+'hierarchical' => false,
+'menu_position' => null, 
+'supports' => array('title','editor','thumbnail')
+);
+
+register_post_type( 'biblioteca_item' , $args );
+flush_rewrite_rules();
 }
-
-add_action( 'init', 'biblioteca_cpt', 1 );
-///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
-
-
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 // Adiciona Taxonomia cat_biblioteca para organizar itens em diagnósticos, mapas, atas e legislação
 register_taxonomy(
 'cat_biblioteca',
-'biblioteca',
+'biblioteca_item',
 array( 
 'label' => 'Adicionar Categorias ',
 'singular_label' => 'Categoria',
 'rewrite' => true,
 'hierarchical' => true,
-'capabilities' => array(
-        'manage_terms' => 'nobody',
-        'edit_terms' => 'nobody',
-        'delete_terms' => 'nobody',
-    )
+// 'capabilities' => array(
+//         'manage_terms' => 'nobody',
+//         'edit_terms' => 'nobody',
+//         'delete_terms' => 'nobody',
+//     )
 )
 );
 ///////////////////////////////////////////////////////////
@@ -126,17 +162,17 @@ array(
 // Adiciona Taxonomia planos para organizar itens em pddu ou pui
 register_taxonomy(
 'planos',
-'biblioteca',
+'biblioteca_item',
 array( 
 'label' => 'Adicionar Plano ',
 'singular_label' => 'Categoria',
 'rewrite' => true,
 'hierarchical' => true,
-'capabilities' => array(
-        'manage_terms' => 'nobody',
-        'edit_terms' => 'nobody',
-        'delete_terms' => 'nobody',
-    )
+// 'capabilities' => array(
+//         'manage_terms' => 'nobody',
+//         'edit_terms' => 'nobody',
+//         'delete_terms' => 'nobody',
+//     )
 )
 );
 ///////////////////////////////////////////////////////////
@@ -158,43 +194,10 @@ wp_insert_term(
   )
 );
 ///////////////////////////////////////////////////////////
+////////////////acf////////acf/////////////acf/////////////
 ///////////////////////////////////////////////////////////
 	if(function_exists("register_field_group"))
 	{
-		register_field_group(array (
-			'id' => 'acf_biblioteca',
-			'title' => 'Biblioteca',
-			'fields' => array (
-				array (
-					'key' => 'field_543e0293a4b8a',
-					'label' => 'Texto da Página Inicial',
-					'name' => 'texto_da_home',
-					'type' => 'wysiwyg',
-					'instructions' => 'Texto que irá aparecer na descrição da biblioteca na página inicial',
-					'default_value' => '',
-					'toolbar' => 'full',
-					'media_upload' => 'yes',
-				),
-			),
-			'location' => array (
-				array (
-					array (
-						'param' => 'page_template',
-						'operator' => '==',
-						'value' => 'page-biblioteca.php',
-						'order_no' => 0,
-						'group_no' => 0,
-					),
-				),
-			),
-			'options' => array (
-				'position' => 'normal',
-				'layout' => 'no_box',
-				'hide_on_screen' => array (
-				),
-			),
-			'menu_order' => 0,
-		));
 		register_field_group(array (
 			'id' => 'acf_noticias-3',
 			'title' => 'Notícias',

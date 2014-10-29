@@ -110,8 +110,9 @@ class Odin_Post_Type {
 			'can_export'          => true,
 			'rewrite'             => true,
 			'capability_type'     => 'post'
+			
 		);
-
+		
 		return array_merge( $default, $this->arguments );
 	}
 
@@ -122,5 +123,6 @@ class Odin_Post_Type {
 	 */
 	public function register_post_type() {
 		register_post_type( $this->slug, $this->arguments() );
+		flush_rewrite_rules();
 	}
 }
