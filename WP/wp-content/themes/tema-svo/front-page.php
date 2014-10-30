@@ -71,7 +71,9 @@ get_header();
 		<section id="Texto-Home" class="row">
 			
 			<?php $odin_general_opts = get_option( 'odin_general' );
-				echo $odin_general_opts['texto-biblioteca'];
+			 	if (isset($odin_general_opts['texto-biblioteca'])){
+					echo $odin_general_opts['texto-biblioteca'];
+				};
 			?>
 			
 			<!-- <h1>Biblioteca</h1>

@@ -475,7 +475,7 @@ add_action('admin_init', 'flush_rewrite_rules');
 /////////////////////////////////////////////////////////////////////////////////
 function my_custom_posts_per_page( $query ) {
 	if (!is_admin() && is_tax('planos') ){
-        $query->set( 'posts_per_page', 3 );
+        $query->set( 'posts_per_page', 1 );
 	}
 }
 

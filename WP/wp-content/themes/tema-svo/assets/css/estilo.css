@@ -2,7 +2,7 @@
 /*
 amarelo #CCAB1a vermelho #CCAB1a
 azul claro #c1c435 
-vermelho #5e6020 verde #2C512D
+vermelho #717F1F verde #2C512D
 
 */
 a, p, li {font-family: 'Source Sans Pro', sans-serif;
@@ -10,7 +10,7 @@ a, p, li {font-family: 'Source Sans Pro', sans-serif;
 	font-size:16px;
 }
 a {
-color: #5E6020;
+color: #717F1F;
 text-decoration: none;
 }
 img{
@@ -219,7 +219,7 @@ section .slide p{
 }
 .hora-evento{
 	width: 70px;
-	background: #5e6020;
+	background: #717F1F;
 	text-align: center;
 	height: 29px;
 	line-height: 29px;
@@ -252,7 +252,7 @@ h1, h2, h4{
 	
 }
 .item{
-    background: #5e6020;    
+    background: #717F1F;    
     text-align: center;
 	height: 279px !important;
 /*				padding: 40px 10px;*/
@@ -261,7 +261,7 @@ h1, h2, h4{
 .item:nth-child(2n) .img-carousel{
 	height: 100%;
 	padding: 50px 20px 0 0;
-	background: #5e6020;
+	background: #717F1F;
 }
 .item:nth-child(2n) .titulo-carousel{
 	background: #CCAB1a;
@@ -297,7 +297,7 @@ h1, h2, h4{
 }
 .texto-carousel{
 	margin: -18px 0 0 0;
-	background: #5e6020;
+	background: #717F1F;
 	padding: 23px 90px 0 10px;
 }
 .item:nth-child(2n) .texto-carousel{
@@ -494,9 +494,24 @@ color: #1e8cbe;
 	color:#2C512D;
 }
 .item-biblioteca a:hover{
-	color:#5E6020;
+	color:#717F1F;
 }
 .pagination-biblioteca >div {
 	margin: 0 10px;
 }
+.pagination-biblioteca{
+	clear:both;
+	text-align:center;
+}
+.enrolador{
+	min-height:200px;
+}
+.biblioteca h4{
+	color:#C1C435;
+}
+ul li{
+	list-style:none;
+}
+.descrição-cat-biblioteca{
+	min-height:40px;
 }
