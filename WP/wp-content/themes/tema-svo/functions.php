@@ -417,7 +417,34 @@ function opcoes_do_tema(){
 						    'options'     => array( // Opcional (aceita argumentos do wp_editor)
 						        'textarea_rows' => 10
 						    ),
-						)
+						),
+		            )
+		        ),
+				'social_section' => array(
+		            'tab'   => 'odin_social', // Sessão da aba odin_general
+		            'title' => __( 'Links para redes sociais', 'odin' ),
+		            'fields' => array(
+		                array(
+						    'id'          => 'facebook', // Obrigatório
+						    'label'       => __( 'Endereço da página no facebook', 'odin' ), // Obrigatório
+						    'type'        => 'text', // Obrigatório
+						    // 'attributes' => array(), // Opcional (atributos para input HTML/HTML5)
+						    'description' => __( '' ), // Opcional
+						),
+						array(
+						    'id'          => 'skype', // Obrigatório
+						    'label'       => __( 'Contato do skype', 'odin' ), // Obrigatório
+						    'type'        => 'text', // Obrigatório
+						    // 'attributes' => array(), // Opcional (atributos para input HTML/HTML5)
+						    'description' => __( '' ), // Opcional
+						),
+						array(
+						    'id'          => 'email', // Obrigatório
+						    'label'       => __( 'Endereço do e-mail', 'odin' ), // Obrigatório
+						    'type'        => 'text', // Obrigatório
+						    // 'attributes' => array(), // Opcional (atributos para input HTML/HTML5)
+						    'description' => __( '' ), // Opcional
+						),
 		            )
 		        )
 		    )
@@ -428,6 +455,10 @@ function opcoes_do_tema(){
 	        array(
 	            'id' => 'odin_general', // ID da aba e nome da entrada no banco de dados.
 	            'title' => __( 'Configurações', 'odin' ), // Título da aba.
+	        ),
+			array(
+	            'id' => 'odin_social', // ID da aba e nome da entrada no banco de dados.
+	            'title' => __( 'Endereços de redes sociais', 'odin' ), // Título da aba.
 	        )
 	    )
 	);
