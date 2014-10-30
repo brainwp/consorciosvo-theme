@@ -28,7 +28,6 @@
 				
 				<div id="contatos" class="col-md-6">
 					<div class="clearfix"></div>
-					<p> Outras informações de contato Telefone: 1111-1111</p>
 				</div>
 				
 			</div> <!--row-->

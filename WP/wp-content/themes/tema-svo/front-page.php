@@ -10,8 +10,12 @@
  * @since 2.2.0
  */
 
-get_header(); ?>
-
+get_header(); 
+		$count = 0;
+		$args = array( 'post_type' => 'post', 'meta_key' =>'destacar', 'meta_value'=> TRUE, 'posts_per_page' => 4 );
+		$loop = new WP_Query( $args );
+		$numero = $loop->post_count;
+		?>
 	<div class="col-md-8 esquerda"><!--esquerda-->
 		<section id="noticias-section" class="row">
 			<h1>Notícias</h1>
@@ -19,17 +23,17 @@ get_header(); ?>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			    <!-- Carousel indicators -->
 			    <ol class="carousel-indicators">
-			        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-			        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-			        <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
+			        <?php 
+						for ($i = 1; $i <= $numero; $i++) {?>
+							<li data-target="#myCarousel" data-slide-to="<?php echo $i-1?>" <?php if ($i == 1):echo 'class="active"';endif ?>></li>
+						<?php
+						}
+					?>
 			    </ol>   
 			
 				<div class="carousel-inner">
 				<?php
-				$count = 0;
-				$args = array( 'post_type' => 'post', 'meta_key' =>'destacar', 'meta_value'=> TRUE, 'posts_per_page' => 4 );
-				$loop = new WP_Query( $args );
+			
 					while ( $loop->have_posts() ) : $loop->the_post();
 						?>
 						<div class="item <?php if ($count == 0){echo 'active';}?>">
