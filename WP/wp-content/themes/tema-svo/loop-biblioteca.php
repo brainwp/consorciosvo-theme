@@ -44,11 +44,11 @@ global $term;
 			$paginas = $$nomepracolocar->max_num_pages;
 			$pagina_atual = max(1, get_query_var('paged'));
 		 	if ($paginas > 1):
-				previous_posts_link('<div class="inline-block"> < </div>');?>
+				previous_posts_link('<div class="seta-esquerda inline-block">  </div>');?>
 				<div class="inline-block">
 					<?php echo $pagina_atual.' / '.$paginas;?>
 				</div class="inline-block">
-				<?php next_posts_link('<div class="inline-block"> > </div>', $paginas);
+				<?php next_posts_link('<div class=" seta-direita inline-block">  </div>', $paginas);
 				 // use reset postdata to restore orginal query
 				wp_reset_postdata();
 			endif;

@@ -500,9 +500,11 @@ color: #1e8cbe;
 	margin: 0 10px;
 }
 .pagination-biblioteca{
-	clear:both;
-	text-align:center;
-}
+	clear: both;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	}
 .enrolador{
 	min-height:200px;
 }
@@ -514,4 +516,38 @@ ul li{
 }
 .descrição-cat-biblioteca{
 	min-height:40px;
+}
+/*setas*/
+.seta-cima {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	
+	border-bottom: 5px solid black;
+}
+
+.seta-baixo {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-top: 20px solid #f00;
+}
+
+.seta-direita {
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #CCAB1A;
+}
+
+.seta-esquerda {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right:10px solid #CCAB1A; 
 }
