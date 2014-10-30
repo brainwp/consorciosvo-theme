@@ -299,6 +299,14 @@ function inicia_barra_lateral() {
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
 	) );
+	register_sidebar( array(
+		'name' => 'Barra lateral Contato',
+		'id' => 'barra-contato',
+		'before_widget' => '<section id="%1$s" class="modulo-sidebar">',
+		'after_widget' => '</section>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'inicia_barra_lateral' );
 

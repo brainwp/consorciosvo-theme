@@ -436,15 +436,29 @@ ul,ol{
 .nav-baixo, .nav-cima{
 	width: 48px;
 	height: 48px;
-	background-image: url('../../assets/images/setas.png');
+/*	background-image: url('../../assets/images/setas.png');*/
 	background-position: -48px -48px;
 	background-repeat: no-repeat;
 	display: block;
 	margin:0 auto;
 }
 .nav-baixo{
-	background-position: 0 -48px;
+	/*background-position: 0 -48px;*/
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
 	
+	border-top: 20px solid #CCAB1A;
+	
+}
+.nav-cima{
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-bottom: 20px solid #CCAB1A;
 }
 .post-thumbnail.col-md-6{
 	float:right;
@@ -519,21 +533,11 @@ ul li{
 }
 /*setas*/
 .seta-cima {
-	width: 0; 
-	height: 0; 
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
 	
-	border-bottom: 5px solid black;
 }
 
 .seta-baixo {
-	width: 0; 
-	height: 0; 
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
 	
-	border-top: 20px solid #f00;
 }
 
 .seta-direita {
