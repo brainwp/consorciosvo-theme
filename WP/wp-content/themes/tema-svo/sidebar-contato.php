@@ -33,21 +33,23 @@
 							</a>
 						</div>
 						<div class="clearfix"></div>
-						<form>
-							<div class="form-group">
-						        <label for="inputEmail">Email</label>
-						        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<label for="inputText">Mensagem</label>
-								<textarea type="text" class="form-control" id="inputText" placeholder="Mensagem"></textarea>
-							</div>
-							<div class="checkbox">
-								<label>
-									<input type="checkbox"> Desejo receber atualizações
-								</label>
-							</div>
-							<button type="submit" class="btn btn-primary">Enviar</button>
-						</form>
+						<?php echo odin_contact_form()->render();?>
+						
+						<!-- <form>
+													<div class="form-group">
+												        <label for="inputEmail">Email</label>
+												        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+													</div>
+													<div class="form-group">
+														<label for="inputText">Mensagem</label>
+														<textarea type="text" class="form-control" id="inputText" placeholder="Mensagem"></textarea>
+													</div>
+													<div class="checkbox">
+														<label>
+															<input type="checkbox"> Desejo receber atualizações
+														</label>
+													</div>
+													<button type="submit" class="btn btn-primary">Enviar</button>
+												</form> -->
 					</section>
 </div><!-- #secondary -->

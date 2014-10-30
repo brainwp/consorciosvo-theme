@@ -31,8 +31,8 @@ require_once get_template_directory() . '/core/classes/class-theme-options.php';
 require_once get_template_directory() . '/core/classes/class-post-type.php';
 require_once get_template_directory() . '/core/classes/class-taxonomy.php';
 // require_once get_template_directory() . '/core/classes/class-metabox.php';
-// require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
-// require_once get_template_directory() . '/core/classes/class-contact-form.php';
+require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
+require_once get_template_directory() . '/core/classes/class-contact-form.php';
 // require_once get_template_directory() . '/core/classes/class-post-form.php';
 // require_once get_template_directory() . '/core/classes/class-user-meta.php';
 
@@ -420,7 +420,7 @@ function opcoes_do_tema(){
 						    'id'          => 'texto-biblioteca', // Obrigatório
 						    'label'       => __( 'Texto de descrição para a home', 'odin' ), // Obrigatório
 						    'type'        => 'editor', // Obrigatório
-						    'default'     => 'Default text', // Opcional
+						    'default'     => '', // Opcional
 						    'description' => __( 'Descrition Example', 'odin' ), // Opcional
 						    'options'     => array( // Opcional (aceita argumentos do wp_editor)
 						        'textarea_rows' => 10
@@ -488,3 +488,70 @@ function my_custom_posts_per_page( $query ) {
 }
 
 add_filter('parse_query', 'my_custom_posts_per_page');
+
+
+/////////////////////////////////////////////////////////////////////////////////
+///form	/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+function odin_contact_form() {
+
+    $form = new Odin_Contact_Form(
+        'contact_form',
+        'brmagrini@gmail.com'
+    );
+
+    $form->set_fields(
+        array(
+            array(
+                'fields' => array(
+                    array(
+                        'id'          => 'sender_name', // Required
+                        'label'       => __( 'Nome', 'odin' ), // Required
+                        'type'        => 'text', // Required
+                        'required'    => true, // Optional (bool)
+                        'attributes'  => array( // Optional (html input elements)
+                            'placeholder' => __( 'Digite o seu nome' )
+                        )
+                    ),
+                )
+            ),
+            array(
+                'fields' => array(
+                    array(
+                        'id'          => 'sender_email', // Required
+                        'label'       => __( 'E-mail', 'odin' ), // Required
+                        'type'        => 'email', // Required
+                        'required'    => true, // Optional (bool)
+                        'attributes'  => array( // Optional (html input elements)
+                            'placeholder' => __( 'Digite o seu e-mail!' )
+                        ),
+                        'description' => __( 'Precisa ser um endere&ccedil;o de e-mail v&aacute;lido', 'odin' ) // Optional
+                    ),
+                    array(
+                        'id'          => 'sender_message', // Required
+                        'label'       => __( 'Mensagem', 'odin' ), // Required
+                        'type'        => 'textarea', // Required
+                        'required'    => true, // Optional (bool)
+                        'attributes'  => array( // Optional (html input elements)
+                            'placeholder' => __( 'Digite a sua mensagem' )
+                        ),
+                    ),
+                    
+                )
+            )
+        )
+    );
+
+    $form->set_subject( __( 'Email enviado por [sender_name] <[sender_email]>', 'odin' ) );
+
+    $form->set_content_type( 'html' );
+
+    $form->set_reply_to( 'sender_email' );
+	$form->set_subject( __( 'Email enviado por [id_do_campo_nome] <[id_do_campo_email]>', 'odin' ) );
+
+
+    return $form;
+}
+
+add_action( 'init', array( odin_contact_form(), 'init' ), 1 );
