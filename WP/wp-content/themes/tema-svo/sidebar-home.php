@@ -5,7 +5,7 @@
  * @since 2.2.0
  */
 ?>
-<div id="secondary" class="aside col-md-4 sidebar direita <?php echo odin_sidebar_classes(); ?>" role="complementary">
+<div id="secondary" class="aside col-md-4 sidebar direita " role="complementary">
 					<section id="pagina-home" class="modulo-sidebar">
 						<?php get_template_part("loop", "sidebar")?>
 					</section>

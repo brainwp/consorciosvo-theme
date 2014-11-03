@@ -8,7 +8,7 @@
 <?php $odin_general_opts = get_option( 'odin_social' );
 	
 ?>
-<div id="secondary" class="aside col-md-4 sidebar direita <?php echo odin_sidebar_classes(); ?>" role="complementary">
+<div id="secondary" class="aside col-md-4 sidebar direita " role="complementary">
 					
 					<section id="participe" class="modulo-sidebar">
 						<h2>Participe</h2>

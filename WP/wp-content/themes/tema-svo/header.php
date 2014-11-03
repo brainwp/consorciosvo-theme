@@ -48,7 +48,7 @@
 												'theme_location' => 'main-menu',
 												'depth'          => 2,
 												'container'      => 'div',
-												'container_class' => 'collapse navbar-collapse',
+												'container_class' => 'navbar',
 												'container_id'    => 'menu-principal',
 												'menu_class'     => 'nav navbar-nav centro col-md-12',
 												'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',

@@ -54,6 +54,8 @@ body{
 }
 #logos{
 	float:right;
+	margin: 35px 0;
+	
 }
 #logo{
 	background:url('../images/fundo-header.jpg');
@@ -85,12 +87,17 @@ header.container{
 	 margin-right: 0; 
 }
 
-@media only screen and (min-width : 768px) {
-    /* Make Navigation Toggle on Desktop Hover */
+
+.dropdown:hover .dropdown-menu {
+  	display: block;
+ 			    			    }
+/* usar para responsivo */
+/*@media only screen and (min-width : 768px) {
     .dropdown:hover .dropdown-menu {
     			    			        display: block;
     			    			    }
-}
+}*/
+
 .container {
 width: 1170px;
 box-shadow: 0px 8px 21px #000000;
@@ -236,7 +243,7 @@ section .slide p{
     
 }
 .esquerda {
-	margin: 0px 0 20px 50px;
+	margin: 0px 0 20px 20px;
 	
 }
 .col-md-8.esquerda {
@@ -350,8 +357,17 @@ bottom: 10px;
 }
 
 .navbar-nav.centro{
-padding: 0;
-width: 92%;
+	padding: 0;
+	width: 92%;
+	margin: 0 auto;
+	display: block;
+	float: none;
+}
+#menu-principal .menu-item a:hover, #menu-principal .menu-item.current-menu-item{
+	background:#2C512D;
+}
+html .menu-item.current-menu-item a{
+	color:#c1c435;
 }
 .busca{
 	
@@ -554,4 +570,53 @@ ul li{
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent; 
 	border-right:10px solid #CCAB1A; 
+}
+#logos img{
+	max-height:100px;
+	width:auto;
+}
+footer .row{
+	width: 953px;
+	margin: 0 auto;
+	float: none;
+	display: block;
+}
+.esquerda{
+	margin-left: 47px;
+}
+/*segurando o responsivo*/
+html .col-xs-1, html .col-sm-1, html .col-md-1, html .col-lg-1, html .col-xs-2, html .col-sm-2, html .col-md-2, html .col-lg-2, html .col-xs-3, html .col-sm-3, html .col-md-3, html .col-lg-3, html .col-xs-4, html .col-sm-4, html .col-md-4, html .col-lg-4, html .col-xs-5, html .col-sm-5, html .col-md-5, html .col-lg-5, html .col-xs-6, html .col-sm-6, html .col-md-6, html .col-lg-6, html .col-xs-7, html .col-sm-7, html .col-md-7, html .col-lg-7, html .col-xs-8, html .col-sm-8, html .col-md-8, html .col-lg-8, html .col-xs-9, html .col-sm-9, html .col-md-9, html .col-lg-9, html .col-xs-10, html .col-sm-10, html .col-md-10, html .col-lg-10, html .col-xs-11, html .col-sm-11, html .col-md-11, html .col-lg-11, html .col-xs-12, html .col-sm-12, html .col-md-12, html .col-lg-12 {
+	float:left;
+}
+html .col-md-4 {
+width: 33.33333%;
+float:left;
+}
+html .navbar-collapse{
+	display:block;
+}
+html .navbar-nav>li {
+float: left;
+}
+html .navbar-nav>li>a {
+padding-top: 15px;
+padding-bottom: 15px;
+}
+html .col-md-11.biblioteca.esquerda.no-sidebar{
+	width:1030px;
+}
+html .col-md-11 {
+width: 91.66667%;
+}
+html .col-md-7 {
+width: 58.33333%;
+}
+html .col-md-5 {
+width: 41.66667%;
+}
+html .col-md-6 {
+width: 50%;
+}
+html .col-md-3 {
+width: 25%;
 }
